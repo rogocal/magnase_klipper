@@ -1,0 +1,1555 @@
+-------------------- Log Start | Mon Nov 13 23:48:28 2023 --------------------
+data_path: /home/admin/printer_data
+is_default_data_path: False
+config_file: /home/admin/printer_data/config/moonraker.conf
+startup_warnings: []
+verbose: False
+debug: False
+asyncio_debug: False
+is_backup_config: False
+is_python_package: False
+instance_uuid: ca3e01a4249f41f98f392e3d1d41e2ad
+unix_socket_path: /home/admin/printer_data/comms/moonraker.sock
+software_version: v0.8.0-197-g975011d
+git_branch: master
+git_remote: origin
+git_repo_url: https://github.com/Arksine/moonraker.git
+modified_files: []
+unofficial_components: []
+log_file: /home/admin/printer_data/logs/moonraker.log
+python_version: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
+msgspec_enabled: False
+uvloop_enabled: False
+
+#################### Moonraker Configuration ####################
+
+[server]
+host = 0.0.0.0
+port = 7125
+klippy_uds_address = /home/admin/printer_data/comms/klippy.sock
+
+[authorization]
+trusted_clients = 
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FE80::/10
+	::1/128
+cors_domains = 
+	*.lan
+	*.local
+	*://localhost
+	*://localhost:*
+	*://my.mainsail.xyz
+	*://app.fluidd.xyz
+
+[octoprint_compat]
+
+[history]
+
+[update_manager]
+channel = dev
+refresh_interval = 168
+
+[update_manager mainsail-config]
+type = git_repo
+primary_branch = master
+path = ~/mainsail-config
+origin = https://github.com/mainsail-crew/mainsail-config.git
+managed_services = klipper
+
+[update_manager mainsail]
+type = web
+channel = stable
+repo = mainsail-crew/mainsail
+path = ~/mainsail
+
+[update_manager crowsnest]
+type = git_repo
+path = ~/crowsnest
+origin = https://github.com/mainsail-crew/crowsnest.git
+managed_services = crowsnest
+install_script = tools/pkglist.sh
+
+[update_manager moonraker-telegram-bot]
+type = git_repo
+path = ~/moonraker-telegram-bot
+origin = https://github.com/nlef/moonraker-telegram-bot.git
+env = ~/moonraker-telegram-bot-env/bin/python
+requirements = scripts/requirements.txt
+install_script = scripts/install.sh
+
+#################################################################
+All Configuration Files:
+/home/admin/printer_data/config/moonraker.conf
+#################################################################
+2023-11-13 20:48:28,252 [confighelper.py:read_file()] - Configuration File '/home/admin/printer_data/config/moonraker.conf' parsed, total size: 1173 B
+2023-11-13 20:48:28,262 [server.py:add_log_rollover_item()] - 
+#################### Moonraker Configuration ####################
+
+[server]
+host = 0.0.0.0
+port = 7125
+klippy_uds_address = /home/admin/printer_data/comms/klippy.sock
+
+[authorization]
+trusted_clients = 
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FE80::/10
+	::1/128
+cors_domains = 
+	*.lan
+	*.local
+	*://localhost
+	*://localhost:*
+	*://my.mainsail.xyz
+	*://app.fluidd.xyz
+
+[octoprint_compat]
+
+[history]
+
+[update_manager]
+channel = dev
+refresh_interval = 168
+
+[update_manager mainsail-config]
+type = git_repo
+primary_branch = master
+path = ~/mainsail-config
+origin = https://github.com/mainsail-crew/mainsail-config.git
+managed_services = klipper
+
+[update_manager mainsail]
+type = web
+channel = stable
+repo = mainsail-crew/mainsail
+path = ~/mainsail
+
+[update_manager crowsnest]
+type = git_repo
+path = ~/crowsnest
+origin = https://github.com/mainsail-crew/crowsnest.git
+managed_services = crowsnest
+install_script = tools/pkglist.sh
+
+[update_manager moonraker-telegram-bot]
+type = git_repo
+path = ~/moonraker-telegram-bot
+origin = https://github.com/nlef/moonraker-telegram-bot.git
+env = ~/moonraker-telegram-bot-env/bin/python
+requirements = scripts/requirements.txt
+install_script = scripts/install.sh
+
+#################################################################
+All Configuration Files:
+/home/admin/printer_data/config/moonraker.conf
+#################################################################
+2023-11-13 20:48:28,528 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /server/logs/rollover
+2023-11-13 20:48:28,535 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.logs.rollover
+2023-11-13 20:48:28,536 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /server/info
+2023-11-13 20:48:28,537 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.info
+2023-11-13 20:48:28,537 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /server/config
+2023-11-13 20:48:28,538 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.config
+2023-11-13 20:48:28,538 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /server/restart
+2023-11-13 20:48:28,539 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.restart
+2023-11-13 20:48:29,683 [server.py:load_component()] - Component (dbus_manager) loaded
+2023-11-13 20:48:30,479 [server.py:add_log_rollover_item()] - Unsafe Shutdown Count: 2
+2023-11-13 20:48:30,734 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /server/database/list
+2023-11-13 20:48:30,736 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.database.list
+2023-11-13 20:48:30,736 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET POST DELETE) /server/database/item
+2023-11-13 20:48:30,737 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.database.get_item, server.database.post_item, server.database.delete_item
+2023-11-13 20:48:30,738 [server.py:load_component()] - Component (database) loaded
+2023-11-13 20:48:31,055 [file_manager.py:__init__()] - Using File System Observer: inotify
+2023-11-13 20:48:31,278 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /server/files/list
+2023-11-13 20:48:31,280 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.files.list
+2023-11-13 20:48:31,280 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /server/files/metadata
+2023-11-13 20:48:31,283 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.files.metadata
+2023-11-13 20:48:31,301 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /server/files/metascan
+2023-11-13 20:48:31,302 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.files.metascan
+2023-11-13 20:48:31,313 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /server/files/thumbnails
+2023-11-13 20:48:31,314 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.files.thumbnails
+2023-11-13 20:48:31,315 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /server/files/roots
+2023-11-13 20:48:31,316 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.files.roots
+2023-11-13 20:48:31,316 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET POST DELETE) /server/files/directory
+2023-11-13 20:48:31,318 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.files.get_directory, server.files.post_directory, server.files.delete_directory
+2023-11-13 20:48:31,318 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /server/files/move
+2023-11-13 20:48:31,319 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.files.move
+2023-11-13 20:48:31,320 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /server/files/copy
+2023-11-13 20:48:31,330 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.files.copy
+2023-11-13 20:48:31,330 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /server/files/zip
+2023-11-13 20:48:31,331 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.files.zip
+2023-11-13 20:48:31,332 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.files.delete_file
+2023-11-13 20:48:31,405 [server.py:load_component()] - Component (file_manager) loaded
+2023-11-13 20:48:31,433 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /printer/print/pause
+2023-11-13 20:48:31,435 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.print.pause
+2023-11-13 20:48:31,435 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /printer/print/resume
+2023-11-13 20:48:31,436 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.print.resume
+2023-11-13 20:48:31,436 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /printer/print/cancel
+2023-11-13 20:48:31,438 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.print.cancel
+2023-11-13 20:48:31,438 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /printer/print/start
+2023-11-13 20:48:31,453 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.print.start
+2023-11-13 20:48:31,453 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /printer/restart
+2023-11-13 20:48:31,455 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.restart
+2023-11-13 20:48:31,455 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /printer/firmware_restart
+2023-11-13 20:48:31,456 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.firmware_restart
+2023-11-13 20:48:31,456 [server.py:load_component()] - Component (klippy_apis) loaded
+2023-11-13 20:48:32,647 [server.py:load_component()] - Component (secrets) loaded
+2023-11-13 20:48:32,931 [server.py:load_component()] - Component (template) loaded
+2023-11-13 20:48:33,662 [server.py:add_log_rollover_item()] - 
+System Info:
+
+***python***
+  version: (3, 9, 2, 'final', 0)
+  version_string: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
+
+***cpu_info***
+  cpu_count: 2
+  bits: 32bit
+  processor: x86_64
+  cpu_desc: Intel(R) Atom(TM) CPU N450   @ 1.66GHz
+  serial_number: 
+  hardware_desc: 
+  model: 
+  total_memory: 2007848
+  memory_units: kB
+
+***sd_info***
+
+***distribution***
+  name: Debian GNU/Linux 11 (bullseye)
+  id: debian
+  version: 11
+  version_parts: {'major': '11', 'minor': '', 'build_number': ''}
+  like: 
+  codename: bullseye
+  release_info: {}
+
+***virtualization***
+  virt_type: none
+  virt_identifier: none
+
+***network***
+
+***canbus***
+
+***Allowed Services***
+  klipper_mcu
+  webcamd
+  MoonCord
+  KlipperScreen
+  moonraker-telegram-bot
+  moonraker-obico
+  sonar
+  crowsnest
+  octoeverywhere
+  ratos-configurator
+2023-11-13 20:48:33,692 [server.py:load_component()] - Component (shell_command) loaded
+2023-11-13 20:48:33,693 [machine.py:__init__()] - Using System Provider: systemd_dbus
+2023-11-13 20:48:33,694 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /machine/reboot
+2023-11-13 20:48:33,696 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: machine.reboot
+2023-11-13 20:48:33,696 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /machine/shutdown
+2023-11-13 20:48:33,717 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: machine.shutdown
+2023-11-13 20:48:33,719 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /machine/services/restart
+2023-11-13 20:48:33,720 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: machine.services.restart
+2023-11-13 20:48:33,721 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /machine/services/stop
+2023-11-13 20:48:33,722 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: machine.services.stop
+2023-11-13 20:48:33,722 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /machine/services/start
+2023-11-13 20:48:33,733 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: machine.services.start
+2023-11-13 20:48:33,735 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /machine/system_info
+2023-11-13 20:48:33,736 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: machine.system_info
+2023-11-13 20:48:33,737 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /machine/sudo/info
+2023-11-13 20:48:33,751 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: machine.sudo.info
+2023-11-13 20:48:33,752 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /machine/sudo/password
+2023-11-13 20:48:33,754 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: machine.sudo.password
+2023-11-13 20:48:33,766 [server.py:load_component()] - Component (machine) loaded
+2023-11-13 20:48:33,783 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /server/temperature_store
+2023-11-13 20:48:33,785 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.temperature_store
+2023-11-13 20:48:33,786 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /server/gcode_store
+2023-11-13 20:48:33,787 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.gcode_store
+2023-11-13 20:48:33,788 [server.py:load_component()] - Component (data_store) loaded
+2023-11-13 20:48:33,827 [proc_stats.py:__init__()] - Unable to find 'vcgencmd', throttle checking disabled
+2023-11-13 20:48:33,827 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /machine/proc_stats
+2023-11-13 20:48:33,850 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: machine.proc_stats
+2023-11-13 20:48:33,854 [server.py:load_component()] - Component (proc_stats) loaded
+2023-11-13 20:48:33,872 [server.py:load_component()] - Component (job_state) loaded
+2023-11-13 20:48:33,877 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST DELETE) /server/job_queue/job
+2023-11-13 20:48:33,878 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.job_queue.post_job, server.job_queue.delete_job
+2023-11-13 20:48:33,878 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /server/job_queue/pause
+2023-11-13 20:48:33,880 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.job_queue.pause
+2023-11-13 20:48:33,880 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /server/job_queue/start
+2023-11-13 20:48:33,893 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.job_queue.start
+2023-11-13 20:48:33,894 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /server/job_queue/status
+2023-11-13 20:48:33,896 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.job_queue.status
+2023-11-13 20:48:33,896 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /server/job_queue/jump
+2023-11-13 20:48:33,898 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.job_queue.jump
+2023-11-13 20:48:33,898 [server.py:load_component()] - Component (job_queue) loaded
+2023-11-13 20:48:33,983 [server.py:load_component()] - Component (http_client) loaded
+2023-11-13 20:48:34,001 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /server/announcements/list
+2023-11-13 20:48:34,019 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.announcements.list
+2023-11-13 20:48:34,019 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /server/announcements/dismiss
+2023-11-13 20:48:34,021 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.announcements.dismiss
+2023-11-13 20:48:34,021 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /server/announcements/update
+2023-11-13 20:48:34,022 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.announcements.update
+2023-11-13 20:48:34,023 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST DELETE) /server/announcements/feed
+2023-11-13 20:48:34,024 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.announcements.post_feed, server.announcements.delete_feed
+2023-11-13 20:48:34,034 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /server/announcements/feeds
+2023-11-13 20:48:34,035 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.announcements.feeds
+2023-11-13 20:48:34,035 [server.py:load_component()] - Component (announcements) loaded
+2023-11-13 20:48:34,045 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /server/webcams/list
+2023-11-13 20:48:34,046 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.webcams.list
+2023-11-13 20:48:34,047 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET POST DELETE) /server/webcams/item
+2023-11-13 20:48:34,048 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.webcams.get_item, server.webcams.post_item, server.webcams.delete_item
+2023-11-13 20:48:34,048 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /server/webcams/test
+2023-11-13 20:48:34,062 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.webcams.test
+2023-11-13 20:48:34,062 [server.py:load_component()] - Component (webcam) loaded
+2023-11-13 20:48:34,076 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: connection.register_remote_method
+2023-11-13 20:48:34,077 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: connection.send_event
+2023-11-13 20:48:34,077 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /server/extensions/list
+2023-11-13 20:48:34,078 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.extensions.list
+2023-11-13 20:48:34,079 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /server/extensions/request
+2023-11-13 20:48:34,080 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.extensions.request
+2023-11-13 20:48:34,080 [server.py:load_component()] - Component (extensions) loaded
+2023-11-13 20:48:34,093 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /api/version
+2023-11-13 20:48:34,095 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /api/server
+2023-11-13 20:48:34,096 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /api/login
+2023-11-13 20:48:34,097 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /api/currentuser
+2023-11-13 20:48:34,126 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /api/settings
+2023-11-13 20:48:34,127 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /api/job
+2023-11-13 20:48:34,128 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /api/printer
+2023-11-13 20:48:34,129 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /api/printer/command
+2023-11-13 20:48:34,147 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /api/printerprofiles
+2023-11-13 20:48:34,150 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /api/files/moonraker/(?P<relative_path>.+)
+2023-11-13 20:48:34,151 [server.py:load_component()] - Component (octoprint_compat) loaded
+2023-11-13 20:48:34,169 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET DELETE) /server/history/job
+2023-11-13 20:48:34,172 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.history.get_job, server.history.delete_job
+2023-11-13 20:48:34,172 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /server/history/list
+2023-11-13 20:48:34,174 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.history.list
+2023-11-13 20:48:34,174 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /server/history/totals
+2023-11-13 20:48:34,186 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.history.totals
+2023-11-13 20:48:34,187 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /server/history/reset_totals
+2023-11-13 20:48:34,188 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: server.history.reset_totals
+2023-11-13 20:48:34,194 [server.py:load_component()] - Component (history) loaded
+2023-11-13 20:48:34,598 [base_deploy.py:log_info()] - Git Repo moonraker: Detected virtualenv: /home/admin/moonraker-env
+2023-11-13 20:48:34,644 [base_deploy.py:log_info()] - Git Repo klipper: Detected virtualenv: /home/admin/klippy-env
+2023-11-13 20:48:34,733 [base_deploy.py:log_info()] - Git Repo moonraker-telegram-bot: Option 'env' is deprecated, use 'virtualenv' instead.
+2023-11-13 20:48:34,739 [base_deploy.py:log_info()] - Git Repo moonraker-telegram-bot: Detected virtualenv: /home/admin/moonraker-telegram-bot-env
+2023-11-13 20:48:34,810 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /machine/update/moonraker
+2023-11-13 20:48:34,821 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: machine.update.moonraker
+2023-11-13 20:48:34,822 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /machine/update/klipper
+2023-11-13 20:48:34,823 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: machine.update.klipper
+2023-11-13 20:48:34,824 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /machine/update/system
+2023-11-13 20:48:34,841 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: machine.update.system
+2023-11-13 20:48:34,842 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /machine/update/client
+2023-11-13 20:48:34,843 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: machine.update.client
+2023-11-13 20:48:34,843 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /machine/update/full
+2023-11-13 20:48:34,845 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: machine.update.full
+2023-11-13 20:48:34,845 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /machine/update/status
+2023-11-13 20:48:34,846 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: machine.update.status
+2023-11-13 20:48:34,847 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /machine/update/refresh
+2023-11-13 20:48:34,859 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: machine.update.refresh
+2023-11-13 20:48:34,859 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /machine/update/recover
+2023-11-13 20:48:34,861 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: machine.update.recover
+2023-11-13 20:48:34,861 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /machine/update/rollback
+2023-11-13 20:48:34,862 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: machine.update.rollback
+2023-11-13 20:48:34,869 [server.py:load_component()] - Component (update_manager) loaded
+2023-11-13 20:48:31,935 [authorization.py:__init__()] - Authorization Configuration Loaded
+Trusted Clients:
+10.0.0.0/8
+127.0.0.0/8
+169.254.0.0/16
+172.16.0.0/12
+192.168.0.0/16
+fe80::/10
+::1/128
+CORS Domains:
+.*\.lan
+.*\.local
+.*://localhost
+.*://localhost:.*
+.*://my\.mainsail\.xyz
+.*://app\.fluidd\.xyz
+2023-11-13 20:48:31,935 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /access/login
+2023-11-13 20:48:31,936 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: access.login
+2023-11-13 20:48:31,937 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /access/logout
+2023-11-13 20:48:31,938 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: access.logout
+2023-11-13 20:48:31,938 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /access/refresh_jwt
+2023-11-13 20:48:31,940 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: access.refresh_jwt
+2023-11-13 20:48:31,940 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET POST DELETE) /access/user
+2023-11-13 20:48:31,945 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: access.get_user, access.post_user, access.delete_user
+2023-11-13 20:48:31,951 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /access/users/list
+2023-11-13 20:48:31,952 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: access.users.list
+2023-11-13 20:48:31,953 [app.py:register_local_handler()] - Registering HTTP Endpoint: (POST) /access/user/password
+2023-11-13 20:48:31,954 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: access.user.password
+2023-11-13 20:48:31,954 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET POST) /access/api_key
+2023-11-13 20:48:31,955 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: access.get_api_key, access.post_api_key
+2023-11-13 20:48:31,956 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /access/oneshot_token
+2023-11-13 20:48:31,965 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: access.oneshot_token
+2023-11-13 20:48:31,966 [app.py:register_local_handler()] - Registering HTTP Endpoint: (GET) /access/info
+2023-11-13 20:48:31,967 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: access.info
+2023-11-13 20:48:31,968 [server.py:load_component()] - Component (authorization) loaded
+2023-11-13 20:48:31,995 [server.py:_initialize_component()] - Performing Component Post Init: [dbus_manager]
+2023-11-13 20:48:32,045 [server.py:_initialize_component()] - Performing Component Post Init: [file_manager]
+2023-11-13 20:48:32,285 [server.py:_initialize_component()] - Performing Component Post Init: [machine]
+2023-11-13 20:48:32,287 [machine.py:validation_init()] - Installation version in database up to date
+2023-11-13 20:48:33,521 [machine.py:check_virt_status()] - No Virtualization Detected
+2023-11-13 20:48:33,778 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.40
+2023-11-13 20:48:33,783 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.40
+2023-11-13 20:48:33,936 [server.py:add_log_rollover_item()] - 
+Systemd unit moonraker.service:
+unit_name: moonraker.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['network-online.target', 'system.slice', 'sysinit.target', '-.mount']
+**After=['systemd-journald.socket', 'network-online.target', 'system.slice', 'sysinit.target', 'basic.target', '-.mount']
+**SupplementaryGroups=['moonraker-admin']
+**EnvironmentFiles=/home/admin/printer_data/systemd/moonraker.env
+**ExecStart=/home/admin/moonraker-env/bin/python $MOONRAKER_ARGS
+**WorkingDirectory=/home/admin/moonraker
+**FragmentPath=/etc/systemd/system/moonraker.service
+**Description=API Server for Klipper SV1
+**User=admin
+2023-11-13 20:48:33,937 [server.py:_initialize_component()] - Performing Component Post Init: [proc_stats]
+2023-11-13 20:48:33,937 [server.py:_initialize_component()] - Performing Component Post Init: [announcements]
+2023-11-13 20:48:33,949 [server.py:_initialize_component()] - Performing Component Post Init: [webcam]
+2023-11-13 20:48:33,950 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.40
+2023-11-13 20:48:33,952 [server.py:_initialize_component()] - Performing Component Post Init: [klippy_connection]
+2023-11-13 20:48:33,952 [server.py:add_log_rollover_item()] - 
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['-.mount', 'sysinit.target', 'system.slice']
+**After=['system.slice', 'network-online.target', '-.mount', 'systemd-journald.socket', 'basic.target', 'sysinit.target']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/admin/printer_data/systemd/klipper.env
+**ExecStart=/home/admin/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/admin/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=admin
+2023-11-13 20:48:33,953 [server.py:_initialize_component()] - Performing Component Post Init: [update_manager]
+2023-11-13 20:48:33,958 [server.py:_initialize_component()] - Performing Component Post Init: [authorization]
+2023-11-13 20:48:38,274 [base_deploy.py:log_info()] - PackageDeploy: PackageKit Provider Configured
+2023-11-13 20:48:39,183 [git_deploy.py:log_repo_info()] - Git Repo moonraker Detected:
+Owner: Arksine
+Repository Name: moonraker
+Path: /home/admin/moonraker
+Remote: origin
+Branch: master
+Remote URL: https://github.com/Arksine/moonraker.git
+Recovery URL: https://github.com/Arksine/moonraker.git
+Current Commit SHA: 975011d19078c209ff5175698962ab12c10b1a07
+Upstream Commit SHA: 975011d19078c209ff5175698962ab12c10b1a07
+Current Version: v0.8.0-197-g975011d1
+Upstream Version: v0.8.0-197-g975011d1
+Rollback Commit: 975011d19078c209ff5175698962ab12c10b1a07
+Rollback Branch: master
+Rollback Version: v0.8.0-197-g975011d1
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: False
+2023-11-13 20:48:39,796 [git_deploy.py:log_repo_info()] - Git Repo klipper Detected:
+Owner: Klipper3d
+Repository Name: klipper
+Path: /home/admin/klipper
+Remote: origin
+Branch: master
+Remote URL: https://github.com/Klipper3d/klipper
+Recovery URL: https://github.com/Klipper3d/klipper
+Current Commit SHA: 0d67d9c45d2dc39f8b4be7d1bb54b94b2698a2b6
+Upstream Commit SHA: 0d67d9c45d2dc39f8b4be7d1bb54b94b2698a2b6
+Current Version: v0.12.0-0-g0d67d9c4
+Upstream Version: v0.12.0-0-g0d67d9c4
+Rollback Commit: 0d67d9c45d2dc39f8b4be7d1bb54b94b2698a2b6
+Rollback Branch: master
+Rollback Version: v0.12.0-0-g0d67d9c4
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: False
+2023-11-13 20:48:40,536 [git_deploy.py:log_repo_info()] - Git Repo mainsail-config Detected:
+Owner: mainsail-crew
+Repository Name: mainsail-config
+Path: /home/admin/mainsail-config
+Remote: origin
+Branch: master
+Remote URL: https://github.com/mainsail-crew/mainsail-config.git
+Recovery URL: https://github.com/mainsail-crew/mainsail-config.git
+Current Commit SHA: 76a9999986b03abb3aed272dc0a818f13a18ea7e
+Upstream Commit SHA: 76a9999986b03abb3aed272dc0a818f13a18ea7e
+Current Version: v1.1.0-1-g76a99999
+Upstream Version: v1.1.0-1-g76a99999
+Rollback Commit: 76a9999986b03abb3aed272dc0a818f13a18ea7e
+Rollback Branch: master
+Rollback Version: v1.1.0-1-g76a99999
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: False
+2023-11-13 20:48:40,586 [web_deploy.py:_log_client_info()] - Web Client mainsail Detected:
+Repo: mainsail-crew/mainsail
+Channel: stable
+Path: /home/admin/mainsail
+Local Version: v2.8.0
+Remote Version: v2.8.0
+Valid: True
+Fallback Client Detected: False
+Pre-release: False
+Download Url: https://github.com/mainsail-crew/mainsail/releases/download/v2.8.0/mainsail.zip
+Download Size: 2147663
+Content Type: application/zip
+Rollback Version: v2.8.0
+Rollback Repo: mainsail-crew/mainsail
+2023-11-13 20:48:41,249 [git_deploy.py:log_repo_info()] - Git Repo crowsnest Detected:
+Owner: mainsail-crew
+Repository Name: crowsnest
+Path: /home/admin/crowsnest
+Remote: origin
+Branch: master
+Remote URL: https://github.com/mainsail-crew/crowsnest.git
+Recovery URL: https://github.com/mainsail-crew/crowsnest.git
+Current Commit SHA: 4050a3bcf846f2c97142f2569bdf3c9cabbd6f54
+Upstream Commit SHA: 4050a3bcf846f2c97142f2569bdf3c9cabbd6f54
+Current Version: v4.0.5-1-g4050a3bc
+Upstream Version: v4.0.5-1-g4050a3bc
+Rollback Commit: 4050a3bcf846f2c97142f2569bdf3c9cabbd6f54
+Rollback Branch: master
+Rollback Version: v4.0.5-1-g4050a3bc
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: False
+2023-11-13 20:48:41,966 [git_deploy.py:log_repo_info()] - Git Repo moonraker-telegram-bot Detected:
+Owner: nlef
+Repository Name: moonraker-telegram-bot
+Path: /home/admin/moonraker-telegram-bot
+Remote: origin
+Branch: master
+Remote URL: https://github.com/nlef/moonraker-telegram-bot.git
+Recovery URL: https://github.com/nlef/moonraker-telegram-bot.git
+Current Commit SHA: b9b47003e13b8a23af696594aac8ba53c777f5a7
+Upstream Commit SHA: b9b47003e13b8a23af696594aac8ba53c777f5a7
+Current Version: v1.5-0-gb9b47003
+Upstream Version: v1.5-0-gb9b47003
+Rollback Commit: b9b47003e13b8a23af696594aac8ba53c777f5a7
+Rollback Branch: master
+Rollback Version: v1.5-0-gb9b47003
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: False
+2023-11-13 20:48:41,981 [base_deploy.py:log_info()] - PackageKit: Next refresh in: 5 Days, 25 Minutes, 29 Seconds
+2023-11-13 20:48:41,987 [base_deploy.py:log_info()] - Git Repo moonraker: Next refresh in: 4 Days, 23 Hours, 6 Minutes, 9 Seconds
+2023-11-13 20:48:41,989 [base_deploy.py:log_info()] - Git Repo klipper: Next refresh in: 4 Days, 23 Hours, 6 Minutes, 12 Seconds
+2023-11-13 20:48:41,989 [base_deploy.py:log_info()] - Git Repo mainsail-config: Next refresh in: 4 Days, 23 Hours, 6 Minutes, 14 Seconds
+2023-11-13 20:48:41,990 [base_deploy.py:log_info()] - Web Client mainsail: Next refresh in: 4 Days, 23 Hours, 6 Minutes, 14 Seconds
+2023-11-13 20:48:41,990 [base_deploy.py:log_info()] - Git Repo crowsnest: Next refresh in: 5 Days, 2 Minutes, 59 Seconds
+2023-11-13 20:48:41,992 [base_deploy.py:log_info()] - Git Repo moonraker-telegram-bot: Next refresh in: 5 Days, 3 Minutes, 1 Second
+2023-11-13 20:48:42,010 [extensions.py:start_unix_server()] - Creating Unix Domain Socket at '/home/admin/printer_data/comms/moonraker.sock'
+2023-11-13 20:48:42,013 [server.py:start_server()] - Starting Moonraker on (0.0.0.0, 7125), Hostname: raspberry
+2023-11-13 20:48:42,024 [app.py:listen()] - SSL Certificate/Key not configured, aborting HTTPS Server startup
+2023-11-13 20:48:42,279 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2023-11-13 20:48:42,735 [server.py:add_log_rollover_item()] - 
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['-.mount', 'sysinit.target', 'system.slice']
+**After=['network-online.target', 'system.slice', 'sysinit.target', 'systemd-journald.socket', 'basic.target', '-.mount']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/admin/printer_data/systemd/klipper.env
+**ExecStart=/home/admin/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/admin/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=admin
+2023-11-13 20:48:42,999 [server.py:add_log_rollover_item()] - Klipper Version: v0.12.0-0-g0d67d9c4
+2023-11-13 20:48:43,051 [app.py:register_remote_handler()] - Registering HTTP endpoint: (GET POST) /printer/info
+2023-11-13 20:48:43,052 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.info
+2023-11-13 20:48:43,053 [app.py:register_remote_handler()] - Registering HTTP endpoint: (GET POST) /printer/emergency_stop
+2023-11-13 20:48:43,054 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.emergency_stop
+2023-11-13 20:48:43,067 [app.py:register_remote_handler()] - Registering HTTP endpoint: (GET POST) /printer/gcode/help
+2023-11-13 20:48:43,068 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.gcode.help
+2023-11-13 20:48:43,069 [app.py:register_remote_handler()] - Registering HTTP endpoint: (GET POST) /printer/gcode/script
+2023-11-13 20:48:43,070 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.gcode.script
+2023-11-13 20:48:43,085 [app.py:register_remote_handler()] - Registering HTTP endpoint: (GET POST) /printer/gcode/restart
+2023-11-13 20:48:43,087 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.gcode.restart
+2023-11-13 20:48:43,102 [app.py:register_remote_handler()] - Registering HTTP endpoint: (GET POST) /printer/gcode/firmware_restart
+2023-11-13 20:48:43,104 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.gcode.firmware_restart
+2023-11-13 20:48:43,104 [app.py:register_remote_handler()] - Registering HTTP endpoint: (GET POST) /printer/objects/list
+2023-11-13 20:48:43,105 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.objects.list
+2023-11-13 20:48:43,105 [app.py:register_remote_handler()] - Registering HTTP endpoint: (GET POST) /printer/objects/query
+2023-11-13 20:48:43,106 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.objects.query
+2023-11-13 20:48:43,115 [app.py:register_remote_handler()] - Registering HTTP endpoint: (GET POST) /printer/objects/subscribe
+2023-11-13 20:48:43,117 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.objects.subscribe
+2023-11-13 20:48:43,117 [app.py:register_remote_handler()] - Registering HTTP endpoint: (GET POST) /printer/pause_resume/cancel
+2023-11-13 20:48:43,119 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.pause_resume.cancel
+2023-11-13 20:48:43,120 [app.py:register_remote_handler()] - Registering HTTP endpoint: (GET POST) /printer/pause_resume/pause
+2023-11-13 20:48:43,121 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.pause_resume.pause
+2023-11-13 20:48:43,121 [app.py:register_remote_handler()] - Registering HTTP endpoint: (GET POST) /printer/pause_resume/resume
+2023-11-13 20:48:43,129 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.pause_resume.resume
+2023-11-13 20:48:43,129 [app.py:register_remote_handler()] - Registering HTTP endpoint: (GET POST) /printer/motion_report/dump_stepper
+2023-11-13 20:48:43,131 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.motion_report.dump_stepper
+2023-11-13 20:48:43,131 [app.py:register_remote_handler()] - Registering HTTP endpoint: (GET POST) /printer/query_endstops/status
+2023-11-13 20:48:43,132 [websockets.py:register_api_handler()] - Registering Websocket JSON-RPC methods: printer.query_endstops.status
+2023-11-13 20:49:01,900 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 127.0.0.1
+2023-11-13 20:49:04,130 [app.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 8.46ms
+2023-11-13 20:49:04,132 [websockets.py:open()] - Websocket Opened: ID: 3909560520, Proxied: True, User Agent: , Host Name: localhost
+2023-11-13 20:49:04,143 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:06,210 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:08,239 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:10,294 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:12,349 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:14,416 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:16,493 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:18,537 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:20,572 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:22,612 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:24,667 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:26,708 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:28,747 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:30,797 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:32,836 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:34,879 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:36,931 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:38,969 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:41,003 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:43,042 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:45,080 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:47,128 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:49,180 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:51,216 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:53,265 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:54,369 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2023-11-13 20:49:54,374 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2023-11-13 20:49:54,381 [klippy_connection.py:_check_ready()] - 
+mcu 'mcu': Unable to connect
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Error configuring printer
+
+2023-11-13 20:49:55,307 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:57,353 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:49:59,388 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:01,431 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:03,482 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:05,531 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:07,569 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:09,625 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:11,662 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:13,697 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:15,744 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:17,793 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:19,832 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:21,869 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:23,911 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:25,959 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:28,000 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:30,039 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:32,081 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:34,119 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:36,159 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:38,201 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:40,253 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:42,294 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:44,329 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:46,370 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:48,416 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:50,449 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:52,491 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:54,543 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:56,596 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:50:58,643 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:00,692 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:02,746 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:04,784 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:06,825 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:08,875 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:10,933 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:12,989 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:15,029 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:17,072 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:19,122 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:21,169 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:23,205 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:25,242 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:27,278 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:29,317 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:31,358 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:33,409 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:35,445 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:37,488 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:39,537 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:41,593 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:43,641 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:45,677 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:47,715 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:49,768 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:51,821 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:53,856 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:55,898 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:57,949 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:51:59,988 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:02,026 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:04,077 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:06,123 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:08,163 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:10,201 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:12,250 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:14,299 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:16,346 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:18,401 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:20,436 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:22,469 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:24,506 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:26,555 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:28,609 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:30,657 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:32,691 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:34,726 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:36,764 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:38,800 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:40,834 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:42,876 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:44,928 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:46,975 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:49,010 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:51,047 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:53,097 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:55,132 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:57,170 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:52:59,225 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:01,283 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:03,337 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:05,387 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:07,435 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:09,488 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:11,522 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:13,559 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:15,597 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:17,634 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:19,676 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:21,725 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:23,759 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:25,799 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:27,857 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:29,913 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:31,949 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:33,985 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:36,037 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:38,090 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:40,143 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:42,188 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:44,235 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:46,270 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:48,314 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:50,369 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:52,403 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:54,441 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:56,503 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:53:58,556 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:00,596 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:02,647 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:04,690 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:06,727 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:08,767 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:10,818 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:12,862 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:14,910 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:16,970 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:19,007 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:21,044 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:23,090 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:25,135 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:27,175 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:29,214 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:31,262 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:33,308 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:35,369 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:37,426 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:39,464 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:41,505 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:43,545 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:45,596 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:47,655 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:49,689 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:51,727 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:53,774 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:55,826 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:57,862 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:54:59,900 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:01,953 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:04,006 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:06,044 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:08,084 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:10,126 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:12,176 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:14,236 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:16,281 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:18,322 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:20,364 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:22,411 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:24,451 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:26,495 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:28,546 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:30,600 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:32,647 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:34,687 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:36,745 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:38,779 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:40,817 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:42,868 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:44,920 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:46,972 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:49,005 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:51,045 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:53,096 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:55,146 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:57,182 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:55:59,220 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:01,273 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:03,307 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:05,347 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:07,395 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:09,441 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:11,480 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:13,513 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:15,552 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:17,607 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:19,645 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:21,682 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:23,732 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:25,792 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:27,844 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:29,882 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:31,919 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:33,966 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:36,020 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:38,081 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:40,132 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:42,166 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:44,203 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:46,248 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:48,304 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:50,339 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:52,377 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:54,424 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:56,464 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:56:58,504 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:00,553 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:02,598 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:04,647 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:06,695 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:08,741 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:10,774 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:12,812 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:14,866 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:16,929 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:18,963 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:21,002 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:23,053 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:25,106 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:27,145 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:29,181 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:31,221 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:33,274 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:35,310 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:37,349 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:39,390 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:41,442 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:43,480 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:45,519 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:47,572 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:49,619 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:51,667 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:53,716 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:55,767 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:57,812 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:57:59,854 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:01,908 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:03,973 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:06,008 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:07,808 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.1.36
+2023-11-13 20:58:07,812 [app.py:log_request()] - 101 GET /websocket (192.168.1.36) [_TRUSTED_USER_] 5.91ms
+2023-11-13 20:58:07,813 [websockets.py:open()] - Websocket Opened: ID: 3909559992, Proxied: True, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36, Host Name: 192.168.1.40
+2023-11-13 20:58:07,819 [websockets.py:_handle_identify()] - Websocket 3909559992 Client Identified - Name: mainsail, Version: 2.8.0, Type: web
+2023-11-13 20:58:08,526 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:10,807 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:12,842 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:14,880 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:16,937 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:18,977 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:21,014 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:23,057 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:25,110 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:27,148 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:29,188 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:31,235 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:33,280 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:35,334 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:37,370 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:39,406 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:41,455 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:43,494 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:45,531 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:47,580 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:49,625 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:51,662 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:53,707 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:55,755 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:57,798 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:58:59,849 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:01,887 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:03,924 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:05,974 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:08,028 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:10,076 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:12,113 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:14,151 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:16,191 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:18,243 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:20,283 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:22,320 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:24,361 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:26,408 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:28,447 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:30,486 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:32,535 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:34,588 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:36,630 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:38,686 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:40,722 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:42,759 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:44,805 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:46,844 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:48,884 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:50,927 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:52,980 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:55,014 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:57,052 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 20:59:59,103 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:01,153 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:03,198 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:05,235 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:07,272 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:09,320 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:11,353 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:13,391 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:15,427 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:17,474 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:19,523 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:21,569 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:23,609 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:25,653 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:27,688 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:29,739 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:31,787 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:33,822 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:35,861 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:37,907 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:39,957 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:42,004 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:44,039 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:46,076 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:48,131 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:50,167 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:52,207 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:54,256 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:56,291 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:00:58,330 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:00,379 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:02,420 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:04,455 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:06,490 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:08,530 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:10,584 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:12,635 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:14,690 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:16,726 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:18,764 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:20,812 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:22,849 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:24,888 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:26,936 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:28,975 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:31,011 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:33,048 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:35,096 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:37,134 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:39,174 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:41,224 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:43,257 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:45,302 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:47,349 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:49,401 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:51,436 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:53,470 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:55,505 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:57,545 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:01:59,594 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:01,627 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:03,664 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:05,718 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:07,753 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:09,791 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:11,831 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:13,889 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:15,926 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:17,964 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:20,015 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:22,068 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:24,121 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:26,212 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:28,251 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:30,296 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:32,333 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:34,372 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:36,425 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:38,474 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:40,522 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:42,592 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:44,628 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:46,690 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:48,741 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:50,790 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:52,824 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:54,862 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:56,908 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:02:58,945 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:00,987 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:03,046 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:05,083 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:07,122 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:09,169 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:11,206 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:13,247 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:15,297 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:17,349 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:19,400 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:21,450 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:23,502 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:25,555 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:27,595 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:29,632 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:31,674 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:33,729 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:35,782 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:37,831 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:39,866 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:41,901 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:43,940 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:45,985 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:48,020 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:50,065 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:52,112 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:54,146 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:56,182 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:03:58,230 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:00,280 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:02,327 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:04,361 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:06,402 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:08,457 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:10,492 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:12,530 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:14,577 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:16,634 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:18,676 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:20,714 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:22,762 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:24,809 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:26,857 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:28,899 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:30,935 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:32,985 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:35,035 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:37,083 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:39,130 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:41,166 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:43,208 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:45,242 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:47,278 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:49,322 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:51,374 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:53,424 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:55,473 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:57,523 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:04:59,576 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:01,631 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:03,684 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:05,740 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:07,793 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:09,831 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:11,869 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:13,918 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:15,973 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:18,011 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:20,051 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:22,089 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:24,124 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:26,162 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:28,214 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:30,249 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:32,287 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:34,337 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:36,372 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:38,415 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:40,464 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:42,519 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:44,554 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:46,591 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:48,642 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:50,686 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:52,723 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:54,760 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:56,806 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:05:58,843 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:00,878 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:02,919 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:04,970 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:07,015 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:09,056 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:11,090 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:13,126 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:15,161 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:17,196 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:19,234 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:21,284 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:23,324 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:25,363 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:27,410 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:29,446 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:31,479 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:33,525 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:35,559 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:37,602 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:39,650 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:41,703 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:43,738 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:45,771 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:47,811 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:49,865 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:51,914 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:53,962 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:55,998 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:06:58,037 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:00,093 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:02,142 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:04,188 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:06,226 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:08,264 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:10,302 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:12,351 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:14,405 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:16,453 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:18,492 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:20,529 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:22,573 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:24,615 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:26,683 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:28,720 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:30,756 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:32,805 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:34,857 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:36,912 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:38,948 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:40,985 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:43,030 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:45,067 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:47,107 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:49,159 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:51,203 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:53,248 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:55,285 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:57,320 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:07:59,359 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:01,396 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:03,455 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:05,488 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:07,530 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:09,577 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:11,633 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:13,677 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:15,714 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:17,768 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:19,817 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:21,854 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:23,891 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:25,940 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:27,993 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:28,195 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2023-11-13 21:08:28,256 [app.py:log_request()] - 503 GET /printer/objects/list (127.0.0.1) [_TRUSTED_USER_] 46.34ms
+2023-11-13 21:08:30,269 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2023-11-13 21:08:30,270 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:32,273 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2023-11-13 21:08:32,275 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:33,236 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2023-11-13 21:08:34,246 [server.py:add_log_rollover_item()] - Klipper Version: v0.12.0-0-g0d67d9c4-dirty
+2023-11-13 21:08:34,271 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:36,305 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:38,351 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:40,439 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:42,474 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:44,511 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:46,546 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:48,585 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:50,626 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:52,661 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:54,697 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:56,750 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:08:58,785 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:00,824 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:02,868 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:04,920 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:06,971 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:09,021 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:11,056 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:13,089 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:15,128 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:17,163 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:19,205 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:21,258 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:23,312 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:25,349 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:27,385 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:29,422 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:31,462 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:33,501 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:35,551 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:37,593 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:39,631 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:41,670 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:43,704 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:45,743 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:47,794 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:49,844 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:51,891 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:53,925 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:55,962 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:09:58,016 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:00,052 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:02,090 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:04,137 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:04,493 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2023-11-13 21:10:04,496 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2023-11-13 21:10:04,500 [klippy_connection.py:_check_ready()] - 
+mcu 'mcu': Unable to connect
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Error configuring printer
+
+2023-11-13 21:10:06,176 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:08,215 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:10,265 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:12,299 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:14,373 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:16,426 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:18,463 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:20,501 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:22,546 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:24,601 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:26,670 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:28,707 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:30,744 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:32,785 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:34,822 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:36,858 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:38,897 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:40,947 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:42,984 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:43,759 [app.py:prepare()] - Upload Request Received from 192.168.1.36
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryM078TyoB1a890Arq
+2023-11-13 21:10:43,790 [app.py:post()] - Processing Uploaded File: moonraker.conf
+2023-11-13 21:10:43,810 [app.py:log_request()] - 201 POST /server/files/upload (192.168.1.36) [_TRUSTED_USER_] 57.93ms
+2023-11-13 21:10:45,018 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:47,053 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:49,095 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:51,146 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:53,197 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:55,245 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:57,287 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:10:59,343 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:01,398 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:03,436 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:05,472 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:07,519 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:09,571 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:11,611 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:13,652 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:15,699 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:17,749 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:19,803 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:21,839 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:23,878 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:25,922 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:27,956 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:29,999 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:32,047 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:34,097 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:36,152 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:38,186 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:40,225 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:42,280 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:44,326 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:46,360 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:48,401 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:50,449 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:52,483 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:54,519 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:56,578 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:11:58,612 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:00,650 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:02,695 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:04,735 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:06,772 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:08,841 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:10,876 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:12,910 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:14,955 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:17,005 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:19,084 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:21,118 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:23,155 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:25,207 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:27,257 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:29,303 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:31,350 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:33,397 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:35,439 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:37,477 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:39,528 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:41,575 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:43,628 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:45,665 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:47,699 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:49,737 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:51,786 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:53,819 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:55,857 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:57,909 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:12:59,953 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:01,988 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:04,025 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:06,075 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:08,127 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:10,185 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:12,221 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:14,255 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:16,292 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:18,347 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:20,397 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:22,430 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:24,473 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:26,525 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:28,575 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:30,629 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:32,664 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:34,707 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:36,762 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:38,801 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:40,839 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:42,887 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:44,933 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:46,985 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:49,027 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:51,060 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:53,099 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:55,151 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:57,190 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:13:59,229 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:01,274 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:03,317 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:05,356 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:07,396 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:09,445 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:11,495 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:13,545 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:15,579 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:17,618 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:19,669 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:21,713 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:23,765 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:25,799 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:27,838 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:29,886 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:31,924 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:33,962 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:36,009 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:38,062 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:40,098 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:42,136 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:44,185 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:46,228 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:48,264 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:50,306 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:52,354 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:54,401 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:56,446 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:14:58,485 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:00,524 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:02,571 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:04,622 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:06,669 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:08,708 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:10,747 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:12,796 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:14,841 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:16,879 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:18,919 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:20,970 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:23,028 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:25,067 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:27,104 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:29,144 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:31,194 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:33,237 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:35,282 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:37,326 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:39,377 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:41,422 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:43,456 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:45,493 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:47,542 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:49,576 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:51,613 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:53,655 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:55,703 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:57,752 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:15:59,802 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:01,843 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:03,880 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:05,925 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:07,958 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:10,002 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:12,053 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:14,098 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:16,132 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:18,173 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:20,224 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:22,283 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:24,325 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:26,368 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:28,406 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:30,444 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:32,494 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:34,545 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:36,578 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:38,619 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:40,667 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:42,702 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:44,734 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:46,781 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:48,814 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:50,856 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:52,899 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:54,950 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:56,999 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:16:59,048 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:01,093 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:03,143 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:05,194 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:07,228 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:09,266 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:11,313 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:13,361 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:15,397 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:17,437 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:19,480 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:21,538 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:23,591 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:25,625 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:27,664 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:29,710 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:31,747 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:33,785 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:35,826 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:37,868 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:39,923 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:41,957 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:43,996 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:46,038 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:48,076 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:50,116 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:52,162 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:54,198 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:56,239 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:17:58,290 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:00,340 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:02,373 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:04,412 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:06,474 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:08,509 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:10,545 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:12,584 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:14,624 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:16,661 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:18,710 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:20,758 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:22,795 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:24,832 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:26,865 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:28,903 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:30,958 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:32,992 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:35,028 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:37,079 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:39,132 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:41,170 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:43,207 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:45,260 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:47,298 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:49,336 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:51,373 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:53,423 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:55,470 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:57,509 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:18:59,571 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:01,621 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:03,661 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:05,709 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:07,751 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:09,790 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:11,826 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:13,868 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:15,923 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:17,958 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:19,996 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:22,042 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:24,079 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:26,116 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:28,164 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:30,201 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:32,240 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:34,288 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:36,321 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:38,360 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:40,417 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:42,467 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:44,517 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:46,562 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:48,615 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:50,672 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:52,712 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:54,749 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:56,801 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:19:58,854 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:20:00,899 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
+2023-11-13 21:20:02,936 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
