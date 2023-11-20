@@ -3109,3 +3109,59 @@ Stats 241711.2: gcodein=0  mcu: mcu_awake=0.001 mcu_task_avg=0.000010 mcu_task_s
 Stats 241712.2: gcodein=0  mcu: mcu_awake=0.001 mcu_task_avg=0.000010 mcu_task_stddev=0.000007 bytes_write=134397 bytes_read=1109393 bytes_retransmit=9 bytes_invalid=0 send_seq=13466 receive_seq=13466 retransmit_seq=2 srtt=0.002 rttvar=0.000 rto=0.025 ready_bytes=0 upcoming_bytes=0 freq=72004587  heater_bed: target=0 temp=25.5 pwm=0.000 sysload=0.34 cputime=4605.543 memavail=1445300 print_time=162067.969 buffer_time=0.000 print_stall=0 extruder: target=0 temp=27.1 pwm=0.000
 Stats 241713.2: gcodein=0  mcu: mcu_awake=0.001 mcu_task_avg=0.000010 mcu_task_stddev=0.000007 bytes_write=134403 bytes_read=1109512 bytes_retransmit=9 bytes_invalid=0 send_seq=13467 receive_seq=13467 retransmit_seq=2 srtt=0.002 rttvar=0.000 rto=0.025 ready_bytes=0 upcoming_bytes=0 freq=72004585  heater_bed: target=0 temp=25.5 pwm=0.000 sysload=0.34 cputime=4605.561 memavail=1445076 print_time=162067.969 buffer_time=0.000 print_stall=0 extruder: target=0 temp=27.2 pwm=0.000
 Running Command {update_git_script}...:
+Reinitialized existing Git repository in /home/admin/klipper-backup/.git/
+
+WARNING: git-filter-branch has a glut of gotchas generating mangled history
+	 rewrites.  Hit Ctrl-C before proceeding to abort, then use an
+	 alternative filtering tool such as 'git filter-repo'
+	 (https://github.com/newren/git-filter-repo/) instead.  See the
+	 filter-branch manual page for more details; to squelch this warning,
+	 set FILTER_BRANCH_SQUELCH_WARNING=1.
+
+Proceeding with filter-branch...
+
+
+Cannot rewrite branches: You have unstaged changes.
+
+[main 25ec4f9] New backup from 20-11-23
+ 36 files changed, 2246316 insertions(+), 1572 deletions(-)
+ create mode 120000 klipper-magnase-backup/printer_data/config/KAMP
+ create mode 100644 klipper-magnase-backup/printer_data/config/KAMP_Settings.cfg
+ create mode 100644 klipper-magnase-backup/printer_data/config/Macros/backup_git.cfg
+ create mode 100644 klipper-magnase-backup/printer_data/config/adaptive_mesh.cfg
+ create mode 100644 klipper-magnase-backup/printer_data/config/line_purge.cfg
+ create mode 100644 klipper-magnase-backup/printer_data/config/printer-20231117_201919.cfg
+ create mode 100644 klipper-magnase-backup/printer_data/config/printer-20231117_224131.cfg
+ create mode 100644 klipper-magnase-backup/printer_data/config/printer-20231117_224551.cfg
+ create mode 100644 klipper-magnase-backup/printer_data/gcodes/Baldurs_Gate_3_Artefact_BOTTOM.gcode
+ create mode 100644 klipper-magnase-backup/printer_data/gcodes/CZFA_Heaterbleeder_case.gcode
+ create mode 100644 klipper-magnase-backup/printer_data/gcodes/First_Layer_Patch-0.25mm.gcode
+ create mode 100644 klipper-magnase-backup/printer_data/gcodes/arreglado.gcode
+ create mode 100644 klipper-magnase-backup/printer_data/gcodes/ball-display-stand.gcode
+ create mode 100644 klipper-magnase-backup/printer_data/gcodes/duotone_adapter v12 (raft).gcode
+ create mode 100644 klipper-magnase-backup/printer_data/gcodes/lucky 13 All frame parts.gcode
+ create mode 100644 klipper-magnase-backup/printer_data/gcodes/test_2.gcode
+ create mode 100644 klipper-magnase-backup/printer_data/gcodes/xyzCalibration_cube.gcode
+ create mode 100644 klipper-magnase-backup/printer_data/logs/crowsnest.log.2023-11-18
+ create mode 100644 klipper-magnase-backup/printer_data/logs/crowsnest.log.2023-11-19
+ create mode 100644 klipper-magnase-backup/printer_data/logs/crowsnest.log.2023-11-20
+ create mode 100644 klipper-magnase-backup/printer_data/logs/klippy.log.2023-11-13
+ create mode 100644 klipper-magnase-backup/printer_data/logs/klippy.log.2023-11-17
+ create mode 100644 klipper-magnase-backup/printer_data/logs/klippy.log.2023-11-18
+ create mode 100644 klipper-magnase-backup/printer_data/logs/klippy.log.2023-11-19
+ create mode 100644 klipper-magnase-backup/printer_data/logs/moonraker.log.2023-11-18
+ create mode 100644 klipper-magnase-backup/printer_data/logs/moonraker.log.2023-11-19
+
+To https://github.com/rogocal/magnase_klipper.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/rogocal/magnase_klipper.git'
+
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Command {update_git_script} finished
+
+Running Command {update_git_script}...:
