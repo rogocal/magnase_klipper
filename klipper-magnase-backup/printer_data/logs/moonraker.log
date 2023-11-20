@@ -5816,3 +5816,260 @@ Content-Type: multipart/form-data; boundary=------------------------a7e670b65664
 2023-11-20 15:53:08,117 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
 2023-11-20 16:36:43,759 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.1.13
 2023-11-20 16:49:54,673 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.1.13
+2023-11-20 17:16:13,426 [app.py:prepare()] - Upload Request Received from 192.168.1.13
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7Y1YEQANdsdB1aBi
+2023-11-20 17:16:13,450 [app.py:post()] - Processing Uploaded File: printer.cfg
+2023-11-20 17:16:13,463 [app.py:log_request()] - 201 POST /server/files/upload (192.168.1.13) [_TRUSTED_USER_] 40.06ms
+2023-11-20 17:16:37,379 [base_deploy.py:log_info()] - PackageKit: Detected 30 package updates:
+chromium
+chromium-common
+chromium-sandbox
+firmware-amd-graphics
+firmware-atheros
+firmware-bnx2
+firmware-bnx2x
+firmware-brcm80211
+firmware-cavium
+firmware-intel-sound
+firmware-ipw2x00
+firmware-ivtv
+firmware-iwlwifi
+firmware-libertas
+firmware-linux
+firmware-linux-nonfree
+firmware-misc-nonfree
+firmware-myricom
+firmware-netronome
+firmware-netxen
+firmware-qcom-media
+firmware-qcom-soc
+firmware-qlogic
+firmware-realtek
+firmware-samsung
+firmware-siano
+firmware-ti-connectivity
+libjavascriptcoregtk-4.0-18
+libpq5
+libwebkit2gtk-4.0-37
+2023-11-20 17:16:37,634 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker status --porcelain -b) successfully finished
+2023-11-20 17:16:37,687 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker branch --list --no-color) successfully finished
+2023-11-20 17:16:37,727 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker remote get-url origin) successfully finished
+2023-11-20 17:16:39,781 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker fetch origin --prune --progress) successfully finished
+2023-11-20 17:16:39,807 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker merge-base --is-ancestor HEAD origin/master) successfully finished
+2023-11-20 17:16:39,829 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker rev-parse HEAD) successfully finished
+2023-11-20 17:16:39,869 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker describe --always --tags --long --dirty --abbrev=8) successfully finished
+2023-11-20 17:16:39,891 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker rev-parse origin/master) successfully finished
+2023-11-20 17:16:39,933 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker describe origin/master --always --tags --long --abbrev=8) successfully finished
+2023-11-20 17:16:39,961 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker rev-list HEAD..dddd968f82bf31155e295c170ebcce060d8d2cf9 --count) successfully finished
+2023-11-20 17:16:39,987 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker log 975011d19078c209ff5175698962ab12c10b1a07..origin/master --format="sha:%H%x1Dauthor:%an%x1Ddate:%ct%x1Dsubject:%s%x1Dmessage:%b%x1E" --max-count=100) successfully finished
+2023-11-20 17:16:40,126 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker for-each-ref --count=100 --sort='-creatordate' --contains=HEAD --merged=origin/master --format='%(if)%(*objecttype)%(then)%(*objecttype) %(*objectname)%(else)%(objecttype) %(objectname)%(end) %(refname)' 'refs/tags') successfully finished
+2023-11-20 17:16:40,127 [git_deploy.py:log_repo_info()] - Git Repo moonraker Detected:
+Owner: Arksine
+Repository Name: moonraker
+Path: /home/admin/moonraker
+Remote: origin
+Branch: master
+Remote URL: https://github.com/Arksine/moonraker.git
+Recovery URL: https://github.com/Arksine/moonraker.git
+Current Commit SHA: 975011d19078c209ff5175698962ab12c10b1a07
+Upstream Commit SHA: dddd968f82bf31155e295c170ebcce060d8d2cf9
+Current Version: v0.8.0-197-g975011d1
+Upstream Version: v0.8.0-202-gdddd968f
+Rollback Commit: 975011d19078c209ff5175698962ab12c10b1a07
+Rollback Branch: master
+Rollback Version: v0.8.0-197-g975011d1
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 5
+Diverged: False
+2023-11-20 17:16:40,127 [base_deploy.py:log_info()] - Git Repo moonraker: Channel: dev
+2023-11-20 17:16:40,127 [base_deploy.py:log_info()] - Git Repo moonraker: Validity check for git repo passed
+2023-11-20 17:16:40,623 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper status --porcelain -b) successfully finished
+2023-11-20 17:16:40,665 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper branch --list --no-color) successfully finished
+2023-11-20 17:16:40,712 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper remote get-url origin) successfully finished
+2023-11-20 17:16:45,955 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper fetch origin --prune --progress) successfully finished
+2023-11-20 17:16:45,981 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper merge-base --is-ancestor HEAD origin/master) successfully finished
+2023-11-20 17:16:46,008 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper rev-parse HEAD) successfully finished
+2023-11-20 17:16:46,050 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper describe --always --tags --long --dirty --abbrev=8) successfully finished
+2023-11-20 17:16:46,071 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper rev-parse origin/master) successfully finished
+2023-11-20 17:16:46,337 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper describe origin/master --always --tags --long --abbrev=8) successfully finished
+2023-11-20 17:16:46,362 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper rev-list HEAD..187cc2f1b89e3870d694f8db6a64b116992106b7 --count) successfully finished
+2023-11-20 17:16:46,388 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper log 0d67d9c45d2dc39f8b4be7d1bb54b94b2698a2b6..origin/master --format="sha:%H%x1Dauthor:%an%x1Ddate:%ct%x1Dsubject:%s%x1Dmessage:%b%x1E" --max-count=100) successfully finished
+2023-11-20 17:16:46,669 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper for-each-ref --count=100 --sort='-creatordate' --contains=HEAD --merged=origin/master --format='%(if)%(*objecttype)%(then)%(*objecttype) %(*objectname)%(else)%(objecttype) %(objectname)%(end) %(refname)' 'refs/tags') successfully finished
+2023-11-20 17:16:46,670 [git_deploy.py:log_repo_info()] - Git Repo klipper Detected:
+Owner: Klipper3d
+Repository Name: klipper
+Path: /home/admin/klipper
+Remote: origin
+Branch: master
+Remote URL: https://github.com/Klipper3d/klipper
+Recovery URL: https://github.com/Klipper3d/klipper
+Current Commit SHA: 0d67d9c45d2dc39f8b4be7d1bb54b94b2698a2b6
+Upstream Commit SHA: 187cc2f1b89e3870d694f8db6a64b116992106b7
+Current Version: v0.12.0-0-g0d67d9c4
+Upstream Version: v0.12.0-8-g187cc2f1
+Rollback Commit: 0d67d9c45d2dc39f8b4be7d1bb54b94b2698a2b6
+Rollback Branch: master
+Rollback Version: v0.12.0-0-g0d67d9c4
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 8
+Diverged: False
+Repo Warnings:
+  Repo has untracked source files: ['klippy/extras/gcode_shell_command.py']
+2023-11-20 17:16:46,670 [base_deploy.py:log_info()] - Git Repo klipper: Channel: dev
+2023-11-20 17:16:46,670 [base_deploy.py:log_info()] - Git Repo klipper: Validity check for git repo passed
+2023-11-20 17:16:46,857 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/mainsail-config status --porcelain -b) successfully finished
+2023-11-20 17:16:46,898 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/mainsail-config branch --list --no-color) successfully finished
+2023-11-20 17:16:46,939 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/mainsail-config remote get-url origin) successfully finished
+2023-11-20 17:16:48,367 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/mainsail-config fetch origin --prune --progress) successfully finished
+2023-11-20 17:16:48,393 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/mainsail-config merge-base --is-ancestor HEAD origin/master) successfully finished
+2023-11-20 17:16:48,417 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/mainsail-config rev-parse HEAD) successfully finished
+2023-11-20 17:16:48,442 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/mainsail-config describe --always --tags --long --dirty --abbrev=8) successfully finished
+2023-11-20 17:16:48,466 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/mainsail-config rev-parse origin/master) successfully finished
+2023-11-20 17:16:48,490 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/mainsail-config describe origin/master --always --tags --long --abbrev=8) successfully finished
+2023-11-20 17:16:48,514 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/mainsail-config rev-list HEAD..76a9999986b03abb3aed272dc0a818f13a18ea7e --count) successfully finished
+2023-11-20 17:16:48,516 [git_deploy.py:log_repo_info()] - Git Repo mainsail-config Detected:
+Owner: mainsail-crew
+Repository Name: mainsail-config
+Path: /home/admin/mainsail-config
+Remote: origin
+Branch: master
+Remote URL: https://github.com/mainsail-crew/mainsail-config.git
+Recovery URL: https://github.com/mainsail-crew/mainsail-config.git
+Current Commit SHA: 76a9999986b03abb3aed272dc0a818f13a18ea7e
+Upstream Commit SHA: 76a9999986b03abb3aed272dc0a818f13a18ea7e
+Current Version: v1.1.0-1-g76a99999
+Upstream Version: v1.1.0-1-g76a99999
+Rollback Commit: 76a9999986b03abb3aed272dc0a818f13a18ea7e
+Rollback Branch: master
+Rollback Version: v1.1.0-1-g76a99999
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: False
+2023-11-20 17:16:48,516 [base_deploy.py:log_info()] - Git Repo mainsail-config: Channel: dev
+2023-11-20 17:16:48,516 [base_deploy.py:log_info()] - Git Repo mainsail-config: Validity check for git repo passed
+2023-11-20 17:16:48,949 [web_deploy.py:_log_client_info()] - Web Client mainsail Detected:
+Repo: mainsail-crew/mainsail
+Channel: stable
+Path: /home/admin/mainsail
+Local Version: v2.8.0
+Remote Version: v2.8.0
+Valid: True
+Fallback Client Detected: False
+Pre-release: False
+Download Url: https://github.com/mainsail-crew/mainsail/releases/download/v2.8.0/mainsail.zip
+Download Size: 2147663
+Content Type: application/zip
+Rollback Version: v2.8.0
+Rollback Repo: mainsail-crew/mainsail
+2023-11-20 17:16:49,164 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/crowsnest status --porcelain -b) successfully finished
+2023-11-20 17:16:49,210 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/crowsnest branch --list --no-color) successfully finished
+2023-11-20 17:16:49,254 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/crowsnest remote get-url origin) successfully finished
+2023-11-20 17:16:50,838 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/crowsnest fetch origin --prune --progress) successfully finished
+2023-11-20 17:16:50,863 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/crowsnest merge-base --is-ancestor HEAD origin/master) successfully finished
+2023-11-20 17:16:50,885 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/crowsnest rev-parse HEAD) successfully finished
+2023-11-20 17:16:50,915 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/crowsnest describe --always --tags --long --dirty --abbrev=8) successfully finished
+2023-11-20 17:16:50,937 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/crowsnest rev-parse origin/master) successfully finished
+2023-11-20 17:16:50,977 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/crowsnest describe origin/master --always --tags --long --abbrev=8) successfully finished
+2023-11-20 17:16:51,001 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/crowsnest rev-list HEAD..380c1776207bc8d69f18daa651413e01fb879c74 --count) successfully finished
+2023-11-20 17:16:51,028 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/crowsnest log 4050a3bcf846f2c97142f2569bdf3c9cabbd6f54..origin/master --format="sha:%H%x1Dauthor:%an%x1Ddate:%ct%x1Dsubject:%s%x1Dmessage:%b%x1E" --max-count=100) successfully finished
+2023-11-20 17:16:51,078 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/crowsnest for-each-ref --count=100 --sort='-creatordate' --contains=HEAD --merged=origin/master --format='%(if)%(*objecttype)%(then)%(*objecttype) %(*objectname)%(else)%(objecttype) %(objectname)%(end) %(refname)' 'refs/tags') successfully finished
+2023-11-20 17:16:51,079 [git_deploy.py:log_repo_info()] - Git Repo crowsnest Detected:
+Owner: mainsail-crew
+Repository Name: crowsnest
+Path: /home/admin/crowsnest
+Remote: origin
+Branch: master
+Remote URL: https://github.com/mainsail-crew/crowsnest.git
+Recovery URL: https://github.com/mainsail-crew/crowsnest.git
+Current Commit SHA: 4050a3bcf846f2c97142f2569bdf3c9cabbd6f54
+Upstream Commit SHA: 380c1776207bc8d69f18daa651413e01fb879c74
+Current Version: v4.0.5-1-g4050a3bc
+Upstream Version: v4.1.0-1-g380c1776
+Rollback Commit: 4050a3bcf846f2c97142f2569bdf3c9cabbd6f54
+Rollback Branch: master
+Rollback Version: v4.0.5-1-g4050a3bc
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 8
+Diverged: False
+2023-11-20 17:16:51,079 [base_deploy.py:log_info()] - Git Repo crowsnest: Channel: dev
+2023-11-20 17:16:51,079 [base_deploy.py:log_info()] - Git Repo crowsnest: Validity check for git repo passed
+2023-11-20 17:16:51,374 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker-telegram-bot status --porcelain -b) successfully finished
+2023-11-20 17:16:51,415 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker-telegram-bot branch --list --no-color) successfully finished
+2023-11-20 17:16:51,460 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker-telegram-bot remote get-url origin) successfully finished
+2023-11-20 17:16:52,611 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker-telegram-bot fetch origin --prune --progress) successfully finished
+2023-11-20 17:16:52,636 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker-telegram-bot merge-base --is-ancestor HEAD origin/master) successfully finished
+2023-11-20 17:16:52,656 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker-telegram-bot rev-parse HEAD) successfully finished
+2023-11-20 17:16:52,682 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker-telegram-bot describe --always --tags --long --dirty --abbrev=8) successfully finished
+2023-11-20 17:16:52,705 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker-telegram-bot rev-parse origin/master) successfully finished
+2023-11-20 17:16:52,738 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker-telegram-bot describe origin/master --always --tags --long --abbrev=8) successfully finished
+2023-11-20 17:16:52,762 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/moonraker-telegram-bot rev-list HEAD..b9b47003e13b8a23af696594aac8ba53c777f5a7 --count) successfully finished
+2023-11-20 17:16:52,763 [git_deploy.py:log_repo_info()] - Git Repo moonraker-telegram-bot Detected:
+Owner: nlef
+Repository Name: moonraker-telegram-bot
+Path: /home/admin/moonraker-telegram-bot
+Remote: origin
+Branch: master
+Remote URL: https://github.com/nlef/moonraker-telegram-bot.git
+Recovery URL: https://github.com/nlef/moonraker-telegram-bot.git
+Current Commit SHA: b9b47003e13b8a23af696594aac8ba53c777f5a7
+Upstream Commit SHA: b9b47003e13b8a23af696594aac8ba53c777f5a7
+Current Version: v1.5-0-gb9b47003
+Upstream Version: v1.5-0-gb9b47003
+Rollback Commit: b9b47003e13b8a23af696594aac8ba53c777f5a7
+Rollback Branch: master
+Rollback Version: v1.5-0-gb9b47003
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: False
+2023-11-20 17:16:52,763 [base_deploy.py:log_info()] - Git Repo moonraker-telegram-bot: Channel: dev
+2023-11-20 17:16:52,764 [base_deploy.py:log_info()] - Git Repo moonraker-telegram-bot: Validity check for git repo passed
+2023-11-20 17:16:52,805 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper-backup status --porcelain -b) successfully finished
+2023-11-20 17:16:53,373 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper-backup branch --list --no-color) successfully finished
+2023-11-20 17:16:53,414 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper-backup remote get-url origin) successfully finished
+2023-11-20 17:16:53,415 [git_deploy.py:_check_moved_origin()] - Git repo klipper-backup: Performing moved origin check - https://github.com/rogocal/magnase_klipper
+2023-11-20 17:16:55,387 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper-backup fetch origin --prune --progress) successfully finished
+2023-11-20 17:16:55,412 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper-backup merge-base --is-ancestor HEAD origin/main) exited with return code 1
+2023-11-20 17:16:55,936 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper-backup rev-parse HEAD) successfully finished
+2023-11-20 17:16:55,961 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper-backup describe --always --tags --long --dirty --abbrev=8) successfully finished
+2023-11-20 17:16:55,984 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper-backup rev-parse origin/main) successfully finished
+2023-11-20 17:16:56,011 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper-backup describe origin/main --always --tags --long --abbrev=8) successfully finished
+2023-11-20 17:16:56,035 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper-backup rev-list HEAD..5408fb0961ff35b67936ed4c56c6fc31b304f13f --count) successfully finished
+2023-11-20 17:16:56,059 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper-backup rev-list HEAD --count) successfully finished
+2023-11-20 17:16:56,060 [git_deploy.py:_set_versions()] - Git repo klipper-backup: Failed to detect current version, got 'b52cf600'. Falling back to inferred version: v0.0.0-8-gb52cf600-inferred
+2023-11-20 17:16:56,087 [shell_command.py:_check_proc_success()] - Command (git -C /home/admin/klipper-backup rev-list 5408fb0961ff35b67936ed4c56c6fc31b304f13f --count) successfully finished
+2023-11-20 17:16:56,089 [git_deploy.py:_set_versions()] - Git repo klipper-backup: Failed to detect upstream version, got '5408fb09'. Falling back to inferred version: v0.0.0-6-inferred
+2023-11-20 17:16:56,089 [git_deploy.py:log_repo_info()] - Git Repo klipper-backup Detected:
+Owner: rogocal
+Repository Name: magnase_klipper
+Path: /home/admin/klipper-backup
+Remote: origin
+Branch: main
+Remote URL: https://github.com/rogocal/magnase_klipper
+Recovery URL: https://github.com/rogocal/magnase_klipper
+Current Commit SHA: b52cf60076542492c027f3b76806c8354e63639f
+Upstream Commit SHA: 5408fb0961ff35b67936ed4c56c6fc31b304f13f
+Current Version: v0.0.0-8-gb52cf600-inferred
+Upstream Version: v0.0.0-6-inferred
+Rollback Commit: d747e4183f2e3067e61dc42d13b5404174c7a026
+Rollback Branch: main
+Rollback Version: v0.0.0-2-gd747e418-inferred
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: True
+Repo Warnings:
+  Unofficial remote url: https://github.com/rogocal/magnase_klipper
+  Repo has diverged from remote
+2023-11-20 17:16:56,089 [base_deploy.py:log_info()] - Git Repo klipper-backup: Channel: dev
+2023-11-20 17:16:56,090 [base_deploy.py:log_info()] - Git Repo klipper-backup: Repo validation check failed, updates disabled
