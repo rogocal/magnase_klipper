@@ -1,0 +1,714 @@
+[11/11/23 20:54:35] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[11/11/23 20:54:38] crowsnest: Version: v4.0.5-1-g4050a3b
+[11/11/23 20:54:38] crowsnest: Prepare Startup ...
+[11/11/23 20:54:38] crowsnest: INFO: Host information:
+[11/11/23 20:54:38] crowsnest: Host Info: Distribution: Debian GNU/Linux 11 (bullseye)
+[11/11/23 20:54:38] crowsnest: Host Info: Kernel: Linux 5.10.0-15-amd64 x86_64
+[11/11/23 20:54:38] crowsnest: Host Info: Model:  Intel(R) Atom(TM) CPU N450   @ 1.66GHz
+[11/11/23 20:54:39] crowsnest: Host Info: Available CPU Cores: 2
+[11/11/23 20:54:39] crowsnest: Host Info: Available Memory: 2019948 kB
+[11/11/23 20:54:39] crowsnest: Host Info: Diskspace (avail. / total): 75G / 90G
+[11/11/23 20:54:39] crowsnest: INFO: Checking Dependencies
+[11/11/23 20:54:43] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[11/11/23 20:54:43] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[11/11/23 20:54:43] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[11/11/23 20:54:43] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/ustreamer.
+[11/11/23 20:54:44] crowsnest: Version Control: ustreamer new version available: fc3e023 (v5.45).
+[11/11/23 20:54:44] crowsnest: INFO: Print Configfile: '/home/admin/printer_data/config/crowsnest.conf'
+[11/11/23 20:54:44] crowsnest:		[crowsnest]
+[11/11/23 20:54:44] crowsnest:		log_path: /home/admin/printer_data/logs/crowsnest.log
+[11/11/23 20:54:44] crowsnest:		log_level: verbose
+[11/11/23 20:54:44] crowsnest:		delete_log: false
+[11/11/23 20:54:44] crowsnest:		no_proxy: false
+[11/11/23 20:54:44] crowsnest:		
+[11/11/23 20:54:44] crowsnest:		[cam 1]
+[11/11/23 20:54:44] crowsnest:		mode: ustreamer
+[11/11/23 20:54:44] crowsnest:		
+[11/11/23 20:54:44] crowsnest:		enable_rtsp: false
+[11/11/23 20:54:44] crowsnest:		rtsp_port: 8554
+[11/11/23 20:54:44] crowsnest:		port: 8080
+[11/11/23 20:54:44] crowsnest:		device: /dev/video0
+[11/11/23 20:54:44] crowsnest:		resolution: 640x480
+[11/11/23 20:54:44] crowsnest:		max_fps: 15
+[11/11/23 20:54:44] crowsnest: INFO: Detect available Devices
+[11/11/23 20:54:44] crowsnest: INFO: Found 1 total available Device(s)
+[11/11/23 20:54:44] crowsnest: INFO: Found 1 available v4l2 (UVC) camera(s)
+[11/11/23 20:54:44] crowsnest: /dev/v4l/by-id/usb-Bison_Electronics_Inc._Lenovo_EasyCamera-video-index0 -> /dev/video0
+[11/11/23 20:54:44] crowsnest: Supported Formats:
+[11/11/23 20:54:44] crowsnest:		[0]: 'YUYV' (YUYV 4:2:2)
+[11/11/23 20:54:44] crowsnest:		Size: Discrete 640x480
+[11/11/23 20:54:44] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/11/23 20:54:44] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/11/23 20:54:44] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/11/23 20:54:44] crowsnest:		Size: Discrete 320x240
+[11/11/23 20:54:44] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/11/23 20:54:44] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/11/23 20:54:44] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/11/23 20:54:44] crowsnest:		Size: Discrete 160x120
+[11/11/23 20:54:44] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/11/23 20:54:44] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/11/23 20:54:44] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/11/23 20:54:44] crowsnest:		Size: Discrete 640x400
+[11/11/23 20:54:44] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/11/23 20:54:44] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/11/23 20:54:45] crowsnest: Supported Controls:
+[11/11/23 20:54:45] crowsnest:		brightness 0x00980900 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/11/23 20:54:45] crowsnest:		contrast 0x00980901 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/11/23 20:54:45] crowsnest:		saturation 0x00980902 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/11/23 20:54:45] crowsnest:		hue 0x00980903 (int)    : min=-128 max=127 step=1 default=0 value=0
+[11/11/23 20:54:45] crowsnest:		gamma 0x00980910 (int)    : min=1 max=11 step=1 default=6 value=6
+[11/11/23 20:54:45] crowsnest:		power_line_frequency 0x00980918 (menu)   : min=0 max=2 default=1 value=1
+[11/11/23 20:54:45] crowsnest:		0: Disabled
+[11/11/23 20:54:45] crowsnest:		1: 50 Hz
+[11/11/23 20:54:45] crowsnest:		2: 60 Hz
+[11/11/23 20:54:45] crowsnest:		sharpness 0x0098091b (int)    : min=0 max=100 step=1 default=50 value=50
+[11/11/23 20:54:45] crowsnest: Try to start configured Cams / Services...
+[11/11/23 20:54:48] crowsnest: INFO: Configuration of Section [cam 1] looks good. Continue ...
+[11/11/23 20:54:49] crowsnest: V4L2 Control: No parameters set for [cam 1]. Skipped.
+[11/11/23 20:54:53] crowsnest: Starting ustreamer with Device /dev/video0 ...
+[11/11/23 20:54:56] crowsnest:  ... Done!
+[11/11/23 21:34:43] crowsnest: Shutdown or Killed by User!
+[11/11/23 21:34:43] crowsnest: Please come again :)
+[11/11/23 21:34:43] crowsnest: Goodbye...
+[11/11/23 21:36:01] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[11/11/23 21:36:02] crowsnest: Version: v4.0.5-1-g4050a3b
+[11/11/23 21:36:02] crowsnest: Prepare Startup ...
+[11/11/23 21:36:02] crowsnest: INFO: Host information:
+[11/11/23 21:36:02] crowsnest: Host Info: Distribution: Debian GNU/Linux 11 (bullseye)
+[11/11/23 21:36:02] crowsnest: Host Info: Kernel: Linux 5.10.0-26-amd64 x86_64
+[11/11/23 21:36:02] crowsnest: Host Info: Model:  Intel(R) Atom(TM) CPU N450   @ 1.66GHz
+[11/11/23 21:36:02] crowsnest: Host Info: Available CPU Cores: 2
+[11/11/23 21:36:02] crowsnest: Host Info: Available Memory: 2007848 kB
+[11/11/23 21:36:02] crowsnest: Host Info: Diskspace (avail. / total): 75G / 90G
+[11/11/23 21:36:02] crowsnest: INFO: Checking Dependencies
+[11/11/23 21:36:05] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[11/11/23 21:36:05] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[11/11/23 21:36:05] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[11/11/23 21:36:05] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/ustreamer.
+[11/11/23 21:36:06] crowsnest: Version Control: ustreamer new version available: fc3e023 (v5.45).
+[11/11/23 21:36:07] crowsnest: INFO: Print Configfile: '/home/admin/printer_data/config/crowsnest.conf'
+[11/11/23 21:36:07] crowsnest:		[crowsnest]
+[11/11/23 21:36:07] crowsnest:		log_path: /home/admin/printer_data/logs/crowsnest.log
+[11/11/23 21:36:07] crowsnest:		log_level: verbose
+[11/11/23 21:36:07] crowsnest:		delete_log: false
+[11/11/23 21:36:07] crowsnest:		no_proxy: false
+[11/11/23 21:36:07] crowsnest:		
+[11/11/23 21:36:07] crowsnest:		[cam 1]
+[11/11/23 21:36:07] crowsnest:		mode: ustreamer
+[11/11/23 21:36:07] crowsnest:		
+[11/11/23 21:36:07] crowsnest:		enable_rtsp: false
+[11/11/23 21:36:07] crowsnest:		rtsp_port: 8554
+[11/11/23 21:36:07] crowsnest:		port: 8080
+[11/11/23 21:36:07] crowsnest:		device: /dev/video0
+[11/11/23 21:36:07] crowsnest:		resolution: 640x480
+[11/11/23 21:36:07] crowsnest:		max_fps: 15
+[11/11/23 21:36:07] crowsnest: INFO: Detect available Devices
+[11/11/23 21:36:07] crowsnest: INFO: Found 1 total available Device(s)
+[11/11/23 21:36:07] crowsnest: INFO: Found 1 available v4l2 (UVC) camera(s)
+[11/11/23 21:36:07] crowsnest: /dev/v4l/by-id/usb-Bison_Electronics_Inc._Lenovo_EasyCamera-video-index0 -> /dev/video0
+[11/11/23 21:36:07] crowsnest: Supported Formats:
+[11/11/23 21:36:07] crowsnest:		[0]: 'YUYV' (YUYV 4:2:2)
+[11/11/23 21:36:07] crowsnest:		Size: Discrete 640x480
+[11/11/23 21:36:07] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/11/23 21:36:07] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/11/23 21:36:07] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/11/23 21:36:07] crowsnest:		Size: Discrete 320x240
+[11/11/23 21:36:07] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/11/23 21:36:07] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/11/23 21:36:07] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/11/23 21:36:07] crowsnest:		Size: Discrete 160x120
+[11/11/23 21:36:07] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/11/23 21:36:07] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/11/23 21:36:07] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/11/23 21:36:07] crowsnest:		Size: Discrete 640x400
+[11/11/23 21:36:07] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/11/23 21:36:07] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/11/23 21:36:08] crowsnest: Supported Controls:
+[11/11/23 21:36:08] crowsnest:		brightness 0x00980900 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/11/23 21:36:08] crowsnest:		contrast 0x00980901 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/11/23 21:36:08] crowsnest:		saturation 0x00980902 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/11/23 21:36:08] crowsnest:		hue 0x00980903 (int)    : min=-128 max=127 step=1 default=0 value=0
+[11/11/23 21:36:08] crowsnest:		gamma 0x00980910 (int)    : min=1 max=11 step=1 default=6 value=6
+[11/11/23 21:36:08] crowsnest:		power_line_frequency 0x00980918 (menu)   : min=0 max=2 default=1 value=1
+[11/11/23 21:36:08] crowsnest:		0: Disabled
+[11/11/23 21:36:08] crowsnest:		1: 50 Hz
+[11/11/23 21:36:08] crowsnest:		2: 60 Hz
+[11/11/23 21:36:08] crowsnest:		sharpness 0x0098091b (int)    : min=0 max=100 step=1 default=50 value=50
+[11/11/23 21:36:08] crowsnest: Try to start configured Cams / Services...
+[11/11/23 21:36:14] crowsnest: INFO: Configuration of Section [cam 1] looks good. Continue ...
+[11/11/23 21:36:17] crowsnest: V4L2 Control: No parameters set for [cam 1]. Skipped.
+[11/11/23 21:36:26] crowsnest:  ... Done!
+[11/11/23 21:36:26] crowsnest: Starting ustreamer with Device /dev/video0 ...
+[11/11/23 23:44:39] crowsnest: Shutdown or Killed by User!
+[11/11/23 23:44:39] crowsnest: Please come again :)
+[11/11/23 23:44:39] crowsnest: Goodbye...
+[11/12/23 12:00:16] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[11/12/23 12:00:17] crowsnest: Version: v4.0.5-1-g4050a3b
+[11/12/23 12:00:17] crowsnest: Prepare Startup ...
+[11/12/23 12:00:17] crowsnest: INFO: Host information:
+[11/12/23 12:00:17] crowsnest: Host Info: Distribution: Debian GNU/Linux 11 (bullseye)
+[11/12/23 12:00:17] crowsnest: Host Info: Kernel: Linux 5.10.0-26-amd64 x86_64
+[11/12/23 12:00:17] crowsnest: Host Info: Model:  Intel(R) Atom(TM) CPU N450   @ 1.66GHz
+[11/12/23 12:00:17] crowsnest: Host Info: Available CPU Cores: 2
+[11/12/23 12:00:17] crowsnest: Host Info: Available Memory: 2007848 kB
+[11/12/23 12:00:17] crowsnest: Host Info: Diskspace (avail. / total): 74G / 90G
+[11/12/23 12:00:17] crowsnest: INFO: Checking Dependencies
+[11/12/23 12:00:23] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[11/12/23 12:00:23] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[11/12/23 12:00:23] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[11/12/23 12:00:23] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/ustreamer.
+[11/12/23 12:00:24] crowsnest: Version Control: ustreamer new version available: fc3e023 (v5.45).
+[11/12/23 12:00:24] crowsnest: INFO: Print Configfile: '/home/admin/printer_data/config/crowsnest.conf'
+[11/12/23 12:00:24] crowsnest:		[crowsnest]
+[11/12/23 12:00:24] crowsnest:		log_path: /home/admin/printer_data/logs/crowsnest.log
+[11/12/23 12:00:24] crowsnest:		log_level: verbose
+[11/12/23 12:00:24] crowsnest:		delete_log: false
+[11/12/23 12:00:24] crowsnest:		no_proxy: false
+[11/12/23 12:00:24] crowsnest:		
+[11/12/23 12:00:24] crowsnest:		[cam 1]
+[11/12/23 12:00:24] crowsnest:		mode: ustreamer
+[11/12/23 12:00:24] crowsnest:		
+[11/12/23 12:00:24] crowsnest:		enable_rtsp: false
+[11/12/23 12:00:24] crowsnest:		rtsp_port: 8554
+[11/12/23 12:00:24] crowsnest:		port: 8080
+[11/12/23 12:00:24] crowsnest:		device: /dev/video0
+[11/12/23 12:00:24] crowsnest:		resolution: 640x480
+[11/12/23 12:00:24] crowsnest:		max_fps: 15
+[11/12/23 12:00:24] crowsnest: INFO: Detect available Devices
+[11/12/23 12:00:25] crowsnest: INFO: Found 1 total available Device(s)
+[11/12/23 12:00:25] crowsnest: INFO: Found 1 available v4l2 (UVC) camera(s)
+[11/12/23 12:00:25] crowsnest: /dev/v4l/by-id/usb-Bison_Electronics_Inc._Lenovo_EasyCamera-video-index0 -> /dev/video0
+[11/12/23 12:00:25] crowsnest: Supported Formats:
+[11/12/23 12:00:25] crowsnest:		[0]: 'YUYV' (YUYV 4:2:2)
+[11/12/23 12:00:25] crowsnest:		Size: Discrete 640x480
+[11/12/23 12:00:25] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/12/23 12:00:25] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/12/23 12:00:25] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/12/23 12:00:25] crowsnest:		Size: Discrete 320x240
+[11/12/23 12:00:25] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/12/23 12:00:25] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/12/23 12:00:25] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/12/23 12:00:25] crowsnest:		Size: Discrete 160x120
+[11/12/23 12:00:25] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/12/23 12:00:25] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/12/23 12:00:25] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/12/23 12:00:25] crowsnest:		Size: Discrete 640x400
+[11/12/23 12:00:25] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/12/23 12:00:25] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/12/23 12:00:25] crowsnest: Supported Controls:
+[11/12/23 12:00:25] crowsnest:		brightness 0x00980900 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/12/23 12:00:25] crowsnest:		contrast 0x00980901 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/12/23 12:00:25] crowsnest:		saturation 0x00980902 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/12/23 12:00:25] crowsnest:		hue 0x00980903 (int)    : min=-128 max=127 step=1 default=0 value=0
+[11/12/23 12:00:25] crowsnest:		gamma 0x00980910 (int)    : min=1 max=11 step=1 default=6 value=6
+[11/12/23 12:00:25] crowsnest:		power_line_frequency 0x00980918 (menu)   : min=0 max=2 default=1 value=1
+[11/12/23 12:00:25] crowsnest:		0: Disabled
+[11/12/23 12:00:25] crowsnest:		1: 50 Hz
+[11/12/23 12:00:25] crowsnest:		2: 60 Hz
+[11/12/23 12:00:25] crowsnest:		sharpness 0x0098091b (int)    : min=0 max=100 step=1 default=50 value=50
+[11/12/23 12:00:25] crowsnest: Try to start configured Cams / Services...
+[11/12/23 12:00:31] crowsnest: INFO: Configuration of Section [cam 1] looks good. Continue ...
+[11/12/23 12:00:33] crowsnest: V4L2 Control: No parameters set for [cam 1]. Skipped.
+[11/12/23 12:00:43] crowsnest: Starting ustreamer with Device /dev/video0 ...
+[11/12/23 12:00:44] crowsnest:  ... Done!
+[11/12/23 12:06:55] crowsnest: Shutdown or Killed by User!
+[11/12/23 12:06:55] crowsnest: Please come again :)
+[11/12/23 12:06:55] crowsnest: Goodbye...
+[11/12/23 12:08:15] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[11/12/23 12:08:16] crowsnest: Version: v4.0.5-1-g4050a3b
+[11/12/23 12:08:16] crowsnest: Prepare Startup ...
+[11/12/23 12:08:16] crowsnest: INFO: Host information:
+[11/12/23 12:08:16] crowsnest: Host Info: Distribution: Debian GNU/Linux 11 (bullseye)
+[11/12/23 12:08:16] crowsnest: Host Info: Kernel: Linux 5.10.0-26-amd64 x86_64
+[11/12/23 12:08:16] crowsnest: Host Info: Model:  Intel(R) Atom(TM) CPU N450   @ 1.66GHz
+[11/12/23 12:08:16] crowsnest: Host Info: Available CPU Cores: 2
+[11/12/23 12:08:16] crowsnest: Host Info: Available Memory: 2007848 kB
+[11/12/23 12:08:17] crowsnest: Host Info: Diskspace (avail. / total): 74G / 90G
+[11/12/23 12:08:17] crowsnest: INFO: Checking Dependencies
+[11/12/23 12:08:23] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[11/12/23 12:08:23] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[11/12/23 12:08:23] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[11/12/23 12:08:23] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/ustreamer.
+[11/12/23 12:08:24] crowsnest: Version Control: ustreamer new version available: fc3e023 (v5.45).
+[11/12/23 12:08:24] crowsnest: INFO: Print Configfile: '/home/admin/printer_data/config/crowsnest.conf'
+[11/12/23 12:08:24] crowsnest:		[crowsnest]
+[11/12/23 12:08:24] crowsnest:		log_path: /home/admin/printer_data/logs/crowsnest.log
+[11/12/23 12:08:24] crowsnest:		log_level: verbose
+[11/12/23 12:08:24] crowsnest:		delete_log: false
+[11/12/23 12:08:24] crowsnest:		no_proxy: false
+[11/12/23 12:08:24] crowsnest:		
+[11/12/23 12:08:24] crowsnest:		[cam 1]
+[11/12/23 12:08:24] crowsnest:		mode: ustreamer
+[11/12/23 12:08:24] crowsnest:		
+[11/12/23 12:08:24] crowsnest:		enable_rtsp: false
+[11/12/23 12:08:24] crowsnest:		rtsp_port: 8554
+[11/12/23 12:08:24] crowsnest:		port: 8080
+[11/12/23 12:08:24] crowsnest:		device: /dev/video0
+[11/12/23 12:08:24] crowsnest:		resolution: 640x480
+[11/12/23 12:08:24] crowsnest:		max_fps: 15
+[11/12/23 12:08:24] crowsnest: INFO: Detect available Devices
+[11/12/23 12:08:24] crowsnest: INFO: Found 1 total available Device(s)
+[11/12/23 12:08:24] crowsnest: INFO: Found 1 available v4l2 (UVC) camera(s)
+[11/12/23 12:08:24] crowsnest: /dev/v4l/by-id/usb-Bison_Electronics_Inc._Lenovo_EasyCamera-video-index0 -> /dev/video0
+[11/12/23 12:08:24] crowsnest: Supported Formats:
+[11/12/23 12:08:24] crowsnest:		[0]: 'YUYV' (YUYV 4:2:2)
+[11/12/23 12:08:24] crowsnest:		Size: Discrete 640x480
+[11/12/23 12:08:24] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/12/23 12:08:24] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/12/23 12:08:24] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/12/23 12:08:24] crowsnest:		Size: Discrete 320x240
+[11/12/23 12:08:24] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/12/23 12:08:24] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/12/23 12:08:24] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/12/23 12:08:24] crowsnest:		Size: Discrete 160x120
+[11/12/23 12:08:24] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/12/23 12:08:24] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/12/23 12:08:24] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/12/23 12:08:24] crowsnest:		Size: Discrete 640x400
+[11/12/23 12:08:24] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/12/23 12:08:24] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/12/23 12:08:25] crowsnest: Supported Controls:
+[11/12/23 12:08:25] crowsnest:		brightness 0x00980900 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/12/23 12:08:25] crowsnest:		contrast 0x00980901 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/12/23 12:08:25] crowsnest:		saturation 0x00980902 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/12/23 12:08:25] crowsnest:		hue 0x00980903 (int)    : min=-128 max=127 step=1 default=0 value=0
+[11/12/23 12:08:25] crowsnest:		gamma 0x00980910 (int)    : min=1 max=11 step=1 default=6 value=6
+[11/12/23 12:08:25] crowsnest:		power_line_frequency 0x00980918 (menu)   : min=0 max=2 default=1 value=1
+[11/12/23 12:08:25] crowsnest:		0: Disabled
+[11/12/23 12:08:25] crowsnest:		1: 50 Hz
+[11/12/23 12:08:25] crowsnest:		2: 60 Hz
+[11/12/23 12:08:25] crowsnest:		sharpness 0x0098091b (int)    : min=0 max=100 step=1 default=50 value=50
+[11/12/23 12:08:25] crowsnest: Try to start configured Cams / Services...
+[11/12/23 12:08:31] crowsnest: INFO: Configuration of Section [cam 1] looks good. Continue ...
+[11/12/23 12:08:34] crowsnest: V4L2 Control: No parameters set for [cam 1]. Skipped.
+[11/12/23 12:08:41] crowsnest: Starting ustreamer with Device /dev/video0 ...
+[11/12/23 12:08:41] crowsnest:  ... Done!
+[11/12/23 14:34:20] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[11/12/23 14:34:21] crowsnest: Version: v4.0.5-1-g4050a3b
+[11/12/23 14:34:21] crowsnest: Prepare Startup ...
+[11/12/23 14:34:22] crowsnest: INFO: Host information:
+[11/12/23 14:34:22] crowsnest: Host Info: Distribution: Debian GNU/Linux 11 (bullseye)
+[11/12/23 14:34:22] crowsnest: Host Info: Kernel: Linux 5.10.0-26-amd64 x86_64
+[11/12/23 14:34:22] crowsnest: Host Info: Model:  Intel(R) Atom(TM) CPU N450   @ 1.66GHz
+[11/12/23 14:34:22] crowsnest: Host Info: Available CPU Cores: 2
+[11/12/23 14:34:22] crowsnest: Host Info: Available Memory: 2007848 kB
+[11/12/23 14:34:22] crowsnest: Host Info: Diskspace (avail. / total): 74G / 90G
+[11/12/23 14:34:22] crowsnest: INFO: Checking Dependencies
+[11/12/23 14:34:24] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[11/12/23 14:34:24] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[11/12/23 14:34:25] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[11/12/23 14:34:25] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/ustreamer.
+[11/12/23 14:34:25] crowsnest: Version Control: ustreamer new version available: fc3e023 (v5.45).
+[11/12/23 14:34:25] crowsnest: INFO: Print Configfile: '/home/admin/printer_data/config/crowsnest.conf'
+[11/12/23 14:34:25] crowsnest:		[crowsnest]
+[11/12/23 14:34:25] crowsnest:		log_path: /home/admin/printer_data/logs/crowsnest.log
+[11/12/23 14:34:25] crowsnest:		log_level: verbose
+[11/12/23 14:34:25] crowsnest:		delete_log: false
+[11/12/23 14:34:25] crowsnest:		no_proxy: false
+[11/12/23 14:34:25] crowsnest:		
+[11/12/23 14:34:25] crowsnest:		[cam 1]
+[11/12/23 14:34:25] crowsnest:		mode: ustreamer
+[11/12/23 14:34:25] crowsnest:		
+[11/12/23 14:34:25] crowsnest:		enable_rtsp: false
+[11/12/23 14:34:25] crowsnest:		rtsp_port: 8554
+[11/12/23 14:34:25] crowsnest:		port: 8080
+[11/12/23 14:34:25] crowsnest:		device: /dev/video0
+[11/12/23 14:34:25] crowsnest:		resolution: 640x480
+[11/12/23 14:34:25] crowsnest:		max_fps: 15
+[11/12/23 14:34:26] crowsnest: INFO: Detect available Devices
+[11/12/23 14:34:26] crowsnest: INFO: Found 1 total available Device(s)
+[11/12/23 14:34:26] crowsnest: INFO: Found 1 available v4l2 (UVC) camera(s)
+[11/12/23 14:34:26] crowsnest: /dev/v4l/by-id/usb-Bison_Electronics_Inc._Lenovo_EasyCamera-video-index0 -> /dev/video0
+[11/12/23 14:34:26] crowsnest: Supported Formats:
+[11/12/23 14:34:26] crowsnest:		[0]: 'YUYV' (YUYV 4:2:2)
+[11/12/23 14:34:26] crowsnest:		Size: Discrete 640x480
+[11/12/23 14:34:26] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/12/23 14:34:26] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/12/23 14:34:26] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/12/23 14:34:26] crowsnest:		Size: Discrete 320x240
+[11/12/23 14:34:26] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/12/23 14:34:26] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/12/23 14:34:26] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/12/23 14:34:26] crowsnest:		Size: Discrete 160x120
+[11/12/23 14:34:26] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/12/23 14:34:26] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/12/23 14:34:26] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/12/23 14:34:26] crowsnest:		Size: Discrete 640x400
+[11/12/23 14:34:26] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/12/23 14:34:26] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/12/23 14:34:27] crowsnest: Supported Controls:
+[11/12/23 14:34:26] crowsnest:		brightness 0x00980900 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/12/23 14:34:26] crowsnest:		contrast 0x00980901 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/12/23 14:34:26] crowsnest:		saturation 0x00980902 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/12/23 14:34:26] crowsnest:		hue 0x00980903 (int)    : min=-128 max=127 step=1 default=0 value=0
+[11/12/23 14:34:26] crowsnest:		gamma 0x00980910 (int)    : min=1 max=11 step=1 default=6 value=6
+[11/12/23 14:34:26] crowsnest:		power_line_frequency 0x00980918 (menu)   : min=0 max=2 default=1 value=1
+[11/12/23 14:34:26] crowsnest:		0: Disabled
+[11/12/23 14:34:26] crowsnest:		1: 50 Hz
+[11/12/23 14:34:26] crowsnest:		2: 60 Hz
+[11/12/23 14:34:26] crowsnest:		sharpness 0x0098091b (int)    : min=0 max=100 step=1 default=50 value=50
+[11/12/23 14:34:27] crowsnest: Try to start configured Cams / Services...
+[11/12/23 14:34:33] crowsnest: INFO: Configuration of Section [cam 1] looks good. Continue ...
+[11/12/23 14:34:35] crowsnest: V4L2 Control: No parameters set for [cam 1]. Skipped.
+[11/12/23 14:34:46] crowsnest: Starting ustreamer with Device /dev/video0 ...
+[11/12/23 14:34:47] crowsnest:  ... Done!
+[11/12/23 18:14:46] crowsnest: Shutdown or Killed by User!
+[11/12/23 18:14:46] crowsnest: Please come again :)
+[11/12/23 18:14:46] crowsnest: Goodbye...
+[11/13/23 20:48:18] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[11/13/23 20:48:21] crowsnest: Version: v4.0.5-1-g4050a3b
+[11/13/23 20:48:21] crowsnest: Prepare Startup ...
+[11/13/23 20:48:21] crowsnest: INFO: Host information:
+[11/13/23 20:48:21] crowsnest: Host Info: Distribution: Debian GNU/Linux 11 (bullseye)
+[11/13/23 20:48:21] crowsnest: Host Info: Kernel: Linux 5.10.0-26-amd64 x86_64
+[11/13/23 20:48:21] crowsnest: Host Info: Model:  Intel(R) Atom(TM) CPU N450   @ 1.66GHz
+[11/13/23 20:48:21] crowsnest: Host Info: Available CPU Cores: 2
+[11/13/23 20:48:21] crowsnest: Host Info: Available Memory: 2007848 kB
+[11/13/23 20:48:21] crowsnest: Host Info: Diskspace (avail. / total): 73G / 90G
+[11/13/23 20:48:21] crowsnest: INFO: Checking Dependencies
+[11/13/23 20:48:25] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[11/13/23 20:48:26] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[11/13/23 20:48:26] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[11/13/23 20:48:26] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/ustreamer.
+[11/13/23 20:48:26] crowsnest: Version Control: ustreamer new version available: fc3e023 (v5.45).
+[11/13/23 20:48:26] crowsnest: INFO: Print Configfile: '/home/admin/printer_data/config/crowsnest.conf'
+[11/13/23 20:48:26] crowsnest:		[crowsnest]
+[11/13/23 20:48:26] crowsnest:		log_path: /home/admin/printer_data/logs/crowsnest.log
+[11/13/23 20:48:26] crowsnest:		log_level: verbose
+[11/13/23 20:48:26] crowsnest:		delete_log: false
+[11/13/23 20:48:26] crowsnest:		no_proxy: false
+[11/13/23 20:48:26] crowsnest:		
+[11/13/23 20:48:26] crowsnest:		[cam 1]
+[11/13/23 20:48:26] crowsnest:		mode: ustreamer
+[11/13/23 20:48:26] crowsnest:		
+[11/13/23 20:48:26] crowsnest:		enable_rtsp: false
+[11/13/23 20:48:26] crowsnest:		rtsp_port: 8554
+[11/13/23 20:48:26] crowsnest:		port: 8080
+[11/13/23 20:48:26] crowsnest:		device: /dev/video0
+[11/13/23 20:48:26] crowsnest:		resolution: 640x480
+[11/13/23 20:48:26] crowsnest:		max_fps: 15
+[11/13/23 20:48:27] crowsnest: INFO: Detect available Devices
+[11/13/23 20:48:27] crowsnest: INFO: Found 1 total available Device(s)
+[11/13/23 20:48:27] crowsnest: INFO: Found 1 available v4l2 (UVC) camera(s)
+[11/13/23 20:48:27] crowsnest: /dev/v4l/by-id/usb-Bison_Electronics_Inc._Lenovo_EasyCamera-video-index0 -> /dev/video0
+[11/13/23 20:48:27] crowsnest: Supported Formats:
+[11/13/23 20:48:27] crowsnest:		[0]: 'YUYV' (YUYV 4:2:2)
+[11/13/23 20:48:27] crowsnest:		Size: Discrete 640x480
+[11/13/23 20:48:27] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/13/23 20:48:27] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/13/23 20:48:27] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/13/23 20:48:27] crowsnest:		Size: Discrete 320x240
+[11/13/23 20:48:27] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/13/23 20:48:27] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/13/23 20:48:27] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/13/23 20:48:27] crowsnest:		Size: Discrete 160x120
+[11/13/23 20:48:27] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/13/23 20:48:27] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/13/23 20:48:27] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/13/23 20:48:27] crowsnest:		Size: Discrete 640x400
+[11/13/23 20:48:27] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/13/23 20:48:27] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/13/23 20:48:27] crowsnest: Supported Controls:
+[11/13/23 20:48:27] crowsnest:		brightness 0x00980900 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/13/23 20:48:27] crowsnest:		contrast 0x00980901 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/13/23 20:48:27] crowsnest:		saturation 0x00980902 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/13/23 20:48:27] crowsnest:		hue 0x00980903 (int)    : min=-128 max=127 step=1 default=0 value=0
+[11/13/23 20:48:27] crowsnest:		gamma 0x00980910 (int)    : min=1 max=11 step=1 default=6 value=6
+[11/13/23 20:48:27] crowsnest:		power_line_frequency 0x00980918 (menu)   : min=0 max=2 default=1 value=1
+[11/13/23 20:48:27] crowsnest:		0: Disabled
+[11/13/23 20:48:27] crowsnest:		1: 50 Hz
+[11/13/23 20:48:27] crowsnest:		2: 60 Hz
+[11/13/23 20:48:27] crowsnest:		sharpness 0x0098091b (int)    : min=0 max=100 step=1 default=50 value=50
+[11/13/23 20:48:27] crowsnest: Try to start configured Cams / Services...
+[11/13/23 20:48:31] crowsnest: INFO: Configuration of Section [cam 1] looks good. Continue ...
+[11/13/23 20:48:32] crowsnest: V4L2 Control: No parameters set for [cam 1]. Skipped.
+[11/13/23 20:48:33] crowsnest: Starting ustreamer with Device /dev/video0 ...
+[11/13/23 20:48:35] crowsnest:  ... Done!
+[11/13/23 21:26:04] crowsnest: Shutdown or Killed by User!
+[11/13/23 21:26:04] crowsnest: Please come again :)
+[11/13/23 21:26:04] crowsnest: Goodbye...
+[11/13/23 21:27:21] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[11/13/23 21:27:22] crowsnest: Version: v4.0.5-1-g4050a3b
+[11/13/23 21:27:22] crowsnest: Prepare Startup ...
+[11/13/23 21:27:22] crowsnest: INFO: Host information:
+[11/13/23 21:27:22] crowsnest: Host Info: Distribution: Debian GNU/Linux 11 (bullseye)
+[11/13/23 21:27:22] crowsnest: Host Info: Kernel: Linux 5.10.0-26-amd64 x86_64
+[11/13/23 21:27:22] crowsnest: Host Info: Model:  Intel(R) Atom(TM) CPU N450   @ 1.66GHz
+[11/13/23 21:27:22] crowsnest: Host Info: Available CPU Cores: 2
+[11/13/23 21:27:22] crowsnest: Host Info: Available Memory: 2007848 kB
+[11/13/23 21:27:22] crowsnest: Host Info: Diskspace (avail. / total): 73G / 90G
+[11/13/23 21:27:22] crowsnest: INFO: Checking Dependencies
+[11/13/23 21:27:25] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[11/13/23 21:27:25] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[11/13/23 21:27:25] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[11/13/23 21:27:26] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/ustreamer.
+[11/13/23 21:27:27] crowsnest: Version Control: ustreamer new version available: fc3e023 (v5.45).
+[11/13/23 21:27:27] crowsnest: INFO: Print Configfile: '/home/admin/printer_data/config/crowsnest.conf'
+[11/13/23 21:27:27] crowsnest:		[crowsnest]
+[11/13/23 21:27:27] crowsnest:		log_path: /home/admin/printer_data/logs/crowsnest.log
+[11/13/23 21:27:27] crowsnest:		log_level: verbose
+[11/13/23 21:27:27] crowsnest:		delete_log: false
+[11/13/23 21:27:27] crowsnest:		no_proxy: false
+[11/13/23 21:27:27] crowsnest:		
+[11/13/23 21:27:27] crowsnest:		[cam 1]
+[11/13/23 21:27:27] crowsnest:		mode: ustreamer
+[11/13/23 21:27:27] crowsnest:		
+[11/13/23 21:27:27] crowsnest:		enable_rtsp: false
+[11/13/23 21:27:27] crowsnest:		rtsp_port: 8554
+[11/13/23 21:27:27] crowsnest:		port: 8080
+[11/13/23 21:27:27] crowsnest:		device: /dev/video0
+[11/13/23 21:27:27] crowsnest:		resolution: 640x480
+[11/13/23 21:27:27] crowsnest:		max_fps: 15
+[11/13/23 21:27:27] crowsnest: INFO: Detect available Devices
+[11/13/23 21:27:27] crowsnest: INFO: Found 1 total available Device(s)
+[11/13/23 21:27:27] crowsnest: INFO: Found 1 available v4l2 (UVC) camera(s)
+[11/13/23 21:27:27] crowsnest: /dev/v4l/by-id/usb-Bison_Electronics_Inc._Lenovo_EasyCamera-video-index0 -> /dev/video0
+[11/13/23 21:27:27] crowsnest: Supported Formats:
+[11/13/23 21:27:27] crowsnest:		[0]: 'YUYV' (YUYV 4:2:2)
+[11/13/23 21:27:27] crowsnest:		Size: Discrete 640x480
+[11/13/23 21:27:27] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/13/23 21:27:27] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/13/23 21:27:27] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/13/23 21:27:27] crowsnest:		Size: Discrete 320x240
+[11/13/23 21:27:27] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/13/23 21:27:27] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/13/23 21:27:27] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/13/23 21:27:27] crowsnest:		Size: Discrete 160x120
+[11/13/23 21:27:27] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/13/23 21:27:27] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/13/23 21:27:27] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/13/23 21:27:27] crowsnest:		Size: Discrete 640x400
+[11/13/23 21:27:27] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/13/23 21:27:27] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/13/23 21:27:28] crowsnest: Supported Controls:
+[11/13/23 21:27:28] crowsnest:		brightness 0x00980900 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/13/23 21:27:28] crowsnest:		contrast 0x00980901 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/13/23 21:27:28] crowsnest:		saturation 0x00980902 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/13/23 21:27:28] crowsnest:		hue 0x00980903 (int)    : min=-128 max=127 step=1 default=0 value=0
+[11/13/23 21:27:28] crowsnest:		gamma 0x00980910 (int)    : min=1 max=11 step=1 default=6 value=6
+[11/13/23 21:27:28] crowsnest:		power_line_frequency 0x00980918 (menu)   : min=0 max=2 default=1 value=1
+[11/13/23 21:27:28] crowsnest:		0: Disabled
+[11/13/23 21:27:28] crowsnest:		1: 50 Hz
+[11/13/23 21:27:28] crowsnest:		2: 60 Hz
+[11/13/23 21:27:28] crowsnest:		sharpness 0x0098091b (int)    : min=0 max=100 step=1 default=50 value=50
+[11/13/23 21:27:28] crowsnest: Try to start configured Cams / Services...
+[11/13/23 21:27:36] crowsnest: INFO: Configuration of Section [cam 1] looks good. Continue ...
+[11/13/23 21:27:39] crowsnest: V4L2 Control: No parameters set for [cam 1]. Skipped.
+[11/13/23 21:27:51] crowsnest: Starting ustreamer with Device /dev/video0 ...
+[11/13/23 21:27:52] crowsnest:  ... Done!
+[11/13/23 21:54:15] crowsnest: Shutdown or Killed by User!
+[11/13/23 21:54:15] crowsnest: Please come again :)
+[11/13/23 21:54:15] crowsnest: Goodbye...
+[11/17/23 18:17:52] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[11/17/23 18:17:56] crowsnest: Version: v4.0.5-1-g4050a3b
+[11/17/23 18:17:56] crowsnest: Prepare Startup ...
+[11/17/23 18:17:56] crowsnest: INFO: Host information:
+[11/17/23 18:17:56] crowsnest: Host Info: Distribution: Debian GNU/Linux 11 (bullseye)
+[11/17/23 18:17:56] crowsnest: Host Info: Kernel: Linux 5.10.0-26-amd64 x86_64
+[11/17/23 18:17:56] crowsnest: Host Info: Model:  Intel(R) Atom(TM) CPU N450   @ 1.66GHz
+[11/17/23 18:17:56] crowsnest: Host Info: Available CPU Cores: 2
+[11/17/23 18:17:56] crowsnest: Host Info: Available Memory: 2007848 kB
+[11/17/23 18:17:56] crowsnest: Host Info: Diskspace (avail. / total): 73G / 90G
+[11/17/23 18:17:56] crowsnest: INFO: Checking Dependencies
+[11/17/23 18:17:58] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[11/17/23 18:17:58] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[11/17/23 18:17:58] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[11/17/23 18:17:58] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/ustreamer.
+[11/17/23 18:18:00] crowsnest: Version Control: ustreamer new version available: fc3e023 (v5.45).
+[11/17/23 18:18:00] crowsnest: INFO: Print Configfile: '/home/admin/printer_data/config/crowsnest.conf'
+[11/17/23 18:18:00] crowsnest:		[crowsnest]
+[11/17/23 18:18:00] crowsnest:		log_path: /home/admin/printer_data/logs/crowsnest.log
+[11/17/23 18:18:00] crowsnest:		log_level: verbose
+[11/17/23 18:18:00] crowsnest:		delete_log: false
+[11/17/23 18:18:00] crowsnest:		no_proxy: false
+[11/17/23 18:18:00] crowsnest:		
+[11/17/23 18:18:00] crowsnest:		[cam 1]
+[11/17/23 18:18:00] crowsnest:		mode: ustreamer
+[11/17/23 18:18:00] crowsnest:		
+[11/17/23 18:18:00] crowsnest:		enable_rtsp: false
+[11/17/23 18:18:00] crowsnest:		rtsp_port: 8554
+[11/17/23 18:18:00] crowsnest:		port: 8080
+[11/17/23 18:18:00] crowsnest:		device: /dev/video0
+[11/17/23 18:18:00] crowsnest:		resolution: 640x480
+[11/17/23 18:18:00] crowsnest:		max_fps: 15
+[11/17/23 18:18:00] crowsnest: INFO: Detect available Devices
+[11/17/23 18:18:00] crowsnest: INFO: Found 1 total available Device(s)
+[11/17/23 18:18:00] crowsnest: INFO: Found 1 available v4l2 (UVC) camera(s)
+[11/17/23 18:18:00] crowsnest: /dev/v4l/by-id/usb-Bison_Electronics_Inc._Lenovo_EasyCamera-video-index0 -> /dev/video0
+[11/17/23 18:18:00] crowsnest: Supported Formats:
+[11/17/23 18:18:00] crowsnest:		[0]: 'YUYV' (YUYV 4:2:2)
+[11/17/23 18:18:00] crowsnest:		Size: Discrete 640x480
+[11/17/23 18:18:00] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/17/23 18:18:00] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/17/23 18:18:00] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/17/23 18:18:00] crowsnest:		Size: Discrete 320x240
+[11/17/23 18:18:00] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/17/23 18:18:00] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/17/23 18:18:00] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/17/23 18:18:00] crowsnest:		Size: Discrete 160x120
+[11/17/23 18:18:00] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/17/23 18:18:00] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/17/23 18:18:00] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/17/23 18:18:00] crowsnest:		Size: Discrete 640x400
+[11/17/23 18:18:00] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/17/23 18:18:00] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/17/23 18:18:01] crowsnest: Supported Controls:
+[11/17/23 18:18:01] crowsnest:		brightness 0x00980900 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/17/23 18:18:01] crowsnest:		contrast 0x00980901 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/17/23 18:18:01] crowsnest:		saturation 0x00980902 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/17/23 18:18:01] crowsnest:		hue 0x00980903 (int)    : min=-128 max=127 step=1 default=0 value=0
+[11/17/23 18:18:01] crowsnest:		gamma 0x00980910 (int)    : min=1 max=11 step=1 default=6 value=6
+[11/17/23 18:18:01] crowsnest:		power_line_frequency 0x00980918 (menu)   : min=0 max=2 default=1 value=1
+[11/17/23 18:18:01] crowsnest:		0: Disabled
+[11/17/23 18:18:01] crowsnest:		1: 50 Hz
+[11/17/23 18:18:01] crowsnest:		2: 60 Hz
+[11/17/23 18:18:01] crowsnest:		sharpness 0x0098091b (int)    : min=0 max=100 step=1 default=50 value=50
+[11/17/23 18:18:01] crowsnest: Try to start configured Cams / Services...
+[11/17/23 18:18:05] crowsnest: INFO: Configuration of Section [cam 1] looks good. Continue ...
+[11/17/23 18:18:06] crowsnest: V4L2 Control: No parameters set for [cam 1]. Skipped.
+[11/17/23 18:18:11] crowsnest: Starting ustreamer with Device /dev/video0 ...
+[11/17/23 18:18:13] crowsnest:  ... Done!
+[11/17/23 20:29:55] crowsnest: Shutdown or Killed by User!
+[11/17/23 20:29:55] crowsnest: Please come again :)
+[11/17/23 20:29:55] crowsnest: Goodbye...
+[11/17/23 20:31:22] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[11/17/23 20:31:24] crowsnest: Version: v4.0.5-1-g4050a3b
+[11/17/23 20:31:24] crowsnest: Prepare Startup ...
+[11/17/23 20:31:24] crowsnest: INFO: Host information:
+[11/17/23 20:31:24] crowsnest: Host Info: Distribution: Debian GNU/Linux 11 (bullseye)
+[11/17/23 20:31:24] crowsnest: Host Info: Kernel: Linux 5.10.0-26-amd64 x86_64
+[11/17/23 20:31:24] crowsnest: Host Info: Model:  Intel(R) Atom(TM) CPU N450   @ 1.66GHz
+[11/17/23 20:31:25] crowsnest: Host Info: Available CPU Cores: 2
+[11/17/23 20:31:25] crowsnest: Host Info: Available Memory: 2007848 kB
+[11/17/23 20:31:25] crowsnest: Host Info: Diskspace (avail. / total): 73G / 90G
+[11/17/23 20:31:25] crowsnest: INFO: Checking Dependencies
+[11/17/23 20:31:27] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[11/17/23 20:31:27] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[11/17/23 20:31:27] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[11/17/23 20:31:27] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/ustreamer.
+[11/17/23 20:31:28] crowsnest: Version Control: ustreamer new version available: fc3e023 (v5.45).
+[11/17/23 20:31:28] crowsnest: INFO: Print Configfile: '/home/admin/printer_data/config/crowsnest.conf'
+[11/17/23 20:31:28] crowsnest:		[crowsnest]
+[11/17/23 20:31:28] crowsnest:		log_path: /home/admin/printer_data/logs/crowsnest.log
+[11/17/23 20:31:28] crowsnest:		log_level: verbose
+[11/17/23 20:31:28] crowsnest:		delete_log: false
+[11/17/23 20:31:28] crowsnest:		no_proxy: false
+[11/17/23 20:31:28] crowsnest:		
+[11/17/23 20:31:28] crowsnest:		[cam 1]
+[11/17/23 20:31:28] crowsnest:		mode: ustreamer
+[11/17/23 20:31:28] crowsnest:		
+[11/17/23 20:31:28] crowsnest:		enable_rtsp: false
+[11/17/23 20:31:28] crowsnest:		rtsp_port: 8554
+[11/17/23 20:31:28] crowsnest:		port: 8080
+[11/17/23 20:31:28] crowsnest:		device: /dev/video0
+[11/17/23 20:31:28] crowsnest:		resolution: 640x480
+[11/17/23 20:31:28] crowsnest:		max_fps: 15
+[11/17/23 20:31:28] crowsnest: INFO: Detect available Devices
+[11/17/23 20:31:28] crowsnest: INFO: Found 1 total available Device(s)
+[11/17/23 20:31:28] crowsnest: INFO: Found 1 available v4l2 (UVC) camera(s)
+[11/17/23 20:31:28] crowsnest: /dev/v4l/by-id/usb-Bison_Electronics_Inc._Lenovo_EasyCamera-video-index0 -> /dev/video0
+[11/17/23 20:31:28] crowsnest: Supported Formats:
+[11/17/23 20:31:28] crowsnest:		[0]: 'YUYV' (YUYV 4:2:2)
+[11/17/23 20:31:28] crowsnest:		Size: Discrete 640x480
+[11/17/23 20:31:28] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/17/23 20:31:28] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/17/23 20:31:28] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/17/23 20:31:28] crowsnest:		Size: Discrete 320x240
+[11/17/23 20:31:28] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/17/23 20:31:28] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/17/23 20:31:28] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/17/23 20:31:28] crowsnest:		Size: Discrete 160x120
+[11/17/23 20:31:28] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/17/23 20:31:28] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/17/23 20:31:28] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/17/23 20:31:28] crowsnest:		Size: Discrete 640x400
+[11/17/23 20:31:28] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/17/23 20:31:28] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/17/23 20:31:29] crowsnest: Supported Controls:
+[11/17/23 20:31:29] crowsnest:		brightness 0x00980900 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/17/23 20:31:29] crowsnest:		contrast 0x00980901 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/17/23 20:31:29] crowsnest:		saturation 0x00980902 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/17/23 20:31:29] crowsnest:		hue 0x00980903 (int)    : min=-128 max=127 step=1 default=0 value=0
+[11/17/23 20:31:29] crowsnest:		gamma 0x00980910 (int)    : min=1 max=11 step=1 default=6 value=6
+[11/17/23 20:31:29] crowsnest:		power_line_frequency 0x00980918 (menu)   : min=0 max=2 default=1 value=1
+[11/17/23 20:31:29] crowsnest:		0: Disabled
+[11/17/23 20:31:29] crowsnest:		1: 50 Hz
+[11/17/23 20:31:29] crowsnest:		2: 60 Hz
+[11/17/23 20:31:29] crowsnest:		sharpness 0x0098091b (int)    : min=0 max=100 step=1 default=50 value=50
+[11/17/23 20:31:29] crowsnest: Try to start configured Cams / Services...
+[11/17/23 20:31:33] crowsnest: INFO: Configuration of Section [cam 1] looks good. Continue ...
+[11/17/23 20:31:34] crowsnest: V4L2 Control: No parameters set for [cam 1]. Skipped.
+[11/17/23 20:31:39] crowsnest: Starting ustreamer with Device /dev/video0 ...
+[11/17/23 20:31:41] crowsnest:  ... Done!
+[11/20/23 17:30:28] crowsnest: Shutdown or Killed by User!
+[11/20/23 17:30:28] crowsnest: Please come again :)
+[11/20/23 17:30:28] crowsnest: Goodbye...
+[11/20/23 17:30:35] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[11/20/23 17:30:35] crowsnest: Version: v4.1.0-1-g380c177
+[11/20/23 17:30:35] crowsnest: Prepare Startup ...
+[11/20/23 17:30:36] crowsnest: INFO: Host information:
+[11/20/23 17:30:36] crowsnest: Host Info: Distribution: Debian GNU/Linux 11 (bullseye)
+[11/20/23 17:30:36] crowsnest: Host Info: Kernel: Linux 5.10.0-26-amd64 x86_64
+[11/20/23 17:30:36] crowsnest: Host Info: Model:  Intel(R) Atom(TM) CPU N450   @ 1.66GHz
+[11/20/23 17:30:36] crowsnest: Host Info: Available CPU Cores: 2
+[11/20/23 17:30:36] crowsnest: Host Info: Available Memory: 2007848 kB
+[11/20/23 17:30:36] crowsnest: Host Info: Diskspace (avail. / total): 72G / 90G
+[11/20/23 17:30:36] crowsnest: INFO: Checking Dependencies
+[11/20/23 17:30:36] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[11/20/23 17:30:36] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[11/20/23 17:30:36] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[11/20/23 17:30:36] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/ustreamer.
+[11/20/23 17:30:36] crowsnest: Version Control: ustreamer new version available: fc3e023 (v5.45).
+[11/20/23 17:30:36] crowsnest: INFO: Print Configfile: '/home/admin/printer_data/config/crowsnest.conf'
+[11/20/23 17:30:36] crowsnest:		[crowsnest]
+[11/20/23 17:30:36] crowsnest:		log_path: /home/admin/printer_data/logs/crowsnest.log
+[11/20/23 17:30:36] crowsnest:		log_level: verbose
+[11/20/23 17:30:36] crowsnest:		delete_log: false
+[11/20/23 17:30:36] crowsnest:		no_proxy: false
+[11/20/23 17:30:36] crowsnest:		
+[11/20/23 17:30:36] crowsnest:		[cam 1]
+[11/20/23 17:30:36] crowsnest:		mode: ustreamer
+[11/20/23 17:30:36] crowsnest:		
+[11/20/23 17:30:36] crowsnest:		enable_rtsp: false
+[11/20/23 17:30:36] crowsnest:		rtsp_port: 8554
+[11/20/23 17:30:36] crowsnest:		port: 8080
+[11/20/23 17:30:36] crowsnest:		device: /dev/video0
+[11/20/23 17:30:36] crowsnest:		resolution: 640x480
+[11/20/23 17:30:36] crowsnest:		max_fps: 15
+[11/20/23 17:30:36] crowsnest: INFO: Detect available Devices
+[11/20/23 17:30:36] crowsnest: INFO: Found 1 total available Device(s)
+[11/20/23 17:30:36] crowsnest: INFO: Found 1 available v4l2 (UVC) camera(s)
+[11/20/23 17:30:36] crowsnest: /dev/v4l/by-id/usb-Bison_Electronics_Inc._Lenovo_EasyCamera-video-index0 -> /dev/video0
+[11/20/23 17:30:36] crowsnest: Supported Formats:
+[11/20/23 17:30:36] crowsnest:		[0]: 'YUYV' (YUYV 4:2:2)
+[11/20/23 17:30:36] crowsnest:		Size: Discrete 640x480
+[11/20/23 17:30:36] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/20/23 17:30:36] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/20/23 17:30:36] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/20/23 17:30:36] crowsnest:		Size: Discrete 320x240
+[11/20/23 17:30:36] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/20/23 17:30:36] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/20/23 17:30:36] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/20/23 17:30:36] crowsnest:		Size: Discrete 160x120
+[11/20/23 17:30:36] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/20/23 17:30:36] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/20/23 17:30:36] crowsnest:		Interval: Discrete 0.100s (10.000 fps)
+[11/20/23 17:30:36] crowsnest:		Size: Discrete 640x400
+[11/20/23 17:30:36] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/20/23 17:30:36] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/20/23 17:30:36] crowsnest: Supported Controls:
+[11/20/23 17:30:36] crowsnest:		brightness 0x00980900 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/20/23 17:30:36] crowsnest:		contrast 0x00980901 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/20/23 17:30:36] crowsnest:		saturation 0x00980902 (int)    : min=0 max=100 step=1 default=50 value=50
+[11/20/23 17:30:36] crowsnest:		hue 0x00980903 (int)    : min=-128 max=127 step=1 default=0 value=0
+[11/20/23 17:30:36] crowsnest:		gamma 0x00980910 (int)    : min=1 max=11 step=1 default=6 value=6
+[11/20/23 17:30:36] crowsnest:		power_line_frequency 0x00980918 (menu)   : min=0 max=2 default=1 value=1
+[11/20/23 17:30:36] crowsnest:		0: Disabled
+[11/20/23 17:30:36] crowsnest:		1: 50 Hz
+[11/20/23 17:30:36] crowsnest:		2: 60 Hz
+[11/20/23 17:30:36] crowsnest:		sharpness 0x0098091b (int)    : min=0 max=100 step=1 default=50 value=50
+[11/20/23 17:30:36] crowsnest: Try to start configured Cams / Services...
+[11/20/23 17:30:39] crowsnest: INFO: Configuration of Section [cam 1] looks good. Continue ...
+[11/20/23 17:30:40] crowsnest: V4L2 Control: No parameters set for [cam 1]. Skipped.
+[11/20/23 17:30:44] crowsnest: Starting ustreamer with Device /dev/video0 ...
+[11/20/23 17:30:46] crowsnest:  ... Done!

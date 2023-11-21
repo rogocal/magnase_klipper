@@ -12,6 +12,9 @@ trusted_clients =
 	192.168.0.0/16
 	FE80::/10
 	::1/128
+	100.67.7.121
+	100.83.41.139
+	100.124.82.160
 cors_domains = 
 	*.lan
 	*.local
@@ -65,5 +68,13 @@ path = ~/klipper-backup
 origin = https://github.com/Staubgeborener/klipper-backup.git
 install_script = install.sh
 is_system_service = False
+primary_branch = main
+
+[update_manager Klipper-Adaptive-Meshing-Purging]
+type = git_repo
+channel = dev
+path = ~/Klipper-Adaptive-Meshing-Purging
+origin = https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git
+managed_services = klipper
 primary_branch = main
 
